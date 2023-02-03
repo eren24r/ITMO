@@ -1,0 +1,14 @@
+	solid 
+1) single responsibility principle - SRP
+   A class should have one reason to change
+2) open closed principle - OCP
+   All entities (class, methods...) shoud be open for extension, but closed for modification
+3) Liskov subsitution principle - LSP
+   not change, extend class
+4) Interface segregation principle - ISP
+   Entities not be depend of non-using Interface
+5)  
+
+
+deploy 	
+//todo fields -> constr -> methods -> override methods

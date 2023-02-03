@@ -1,0 +1,62 @@
+touch dodrio3
+mkdir dustox7
+mkdir dustox7/croconaw
+mkdir dustox7/trapinch
+mkdir dustox7/simisear
+touch dustox7/slaking
+touch froslass3
+mkdir garchomp7
+touch garchomp7/buizel
+touch garchomp7/houndour
+touch garchomp7/chandelure
+mkdir garchomp7/masquerain
+touch garchomp7/drapion
+mkdir garchomp7/watchog
+touch horsea5
+mkdir shieldon1
+touch shieldon1/murkrow
+touch shieldon1/vanillite
+touch shieldon1/marowak
+echo "weight=187.8 height=71.0 atk=11 def=7" >> dodrio3
+echo Живет Forest$'\n'Rainforest Taiga >| dustox7/slaking
+echo Живет Taiga Tundra >> froslass3
+echo Тип диеты$'\n'Omnivore >> garchomp7/buizel
+echo satk=8 sdef=5 spd=7 >> garchomp7/houndour
+echo Тип диеты$'\n'Nullivore >> garchomp7/chandelure
+echo Развитые способности$'\n'Damp >> horsea5
+echo weigth=4.6 height=20.0 atk=9$'\n'def=4 >> shieldon1/murkrow
+chmod u=r,g=-,o=r dodrio3
+chmod u=rx,g=wx,o=rwx dustox7
+chmod u=rx,g=x,o=wx dustox7/croconaw
+chmod 400 dustox7/slaking
+chmod u=r,g=-,o=- froslass3
+chmod u=rwx,g=x,o=w garchomp7
+chmod u=rw,g=-,o=- garchomp7/buizel
+chmod u=rw,g=w,o=r garchomp7/houndour
+chmod u=rw,g=-,o=- garchomp7/chandelure
+chmod 555 garchomp7/masquerain
+chmod u=r,g=r,o=- garchomp7/drapion
+chmod u=wx,g=rw,o=wx garchomp7/watchog
+chmod u=r,g=r,o=- horsea5
+chmod u=wx,g=rw,o=x shieldon1
+chmod u=r,g=-,o=r shieldon1/murkrow
+chmod 066 shieldon1/vanillite
+chmod 066 shieldon1/marowak
+cat horsea5 > garchomp7/chandelurehorsea
+ln -s garchomp7/ Copy_32
+chmod u=rwx shieldon1/ shieldon1/murkrow shieldon1/marowak shieldon1/vanillite dustox7/trapinch/
+cp -R shieldon1 dustox7/trapinch/
+chmod u=wx,g=rw,o=x shieldon1
+chmod u=r,g=-,o=r shieldon1/murkrow
+chmod 066 shieldon1/vanillite
+chmod u=rwx,g=rx,o=wx dustox7/trapinch
+cat shieldon1/marowak dustox7/slaking >froslass3_83
+chmod 066 shieldon1/marowak
+cd garchomp7
+ln -s ../froslass3 drapionfroslass
+cd ..
+chmod u=rwx garchomp7/masquerain/
+cp froslass3 garchomp7/masquerain/
+chmod 555 garchomp7/masquerain
+ln dodrio3 shieldon1/murkrowdodrio
+

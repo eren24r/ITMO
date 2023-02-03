@@ -1,0 +1,28 @@
+4.2 
+	ls -haltr * | head -n 3
+shieldon1: Permission denied
+	chmod u=rwx shieldon1/
+
+
+4.3
+	grep -r -v -i 'e$'
+grep: .: Permission denied
+	chmod u=rwx shieldon1/
+grep: ./vanillite: Permission denied
+grep: ./marowak: Permission denied
+	chmod u=rwx vanillite marowak
+
+4.4 
+	grep -r "r$"
+grep: ./dustox7/simisear: Permission denied
+grep: ./garchomp7/watchog: Permission denied
+grep: ./garchomp7/drapionfroslass: No such file or directory
+grep: ./Copy_32/watchog: Permission denied
+grep: ./Copy_32/drapionfroslass: No such file or directory
+
+	chmod u=rwx dustox7/simisear/ garchomp7/watchog/ garchomp7/drapionfroslass Copy_32/watchog/ Copy_32/drapionfroslass 
+
+4.5
+	grep -r "^d" 2>/tmp/rn_errors | sort -r 
+
+

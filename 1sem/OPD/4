@@ -1,0 +1,33 @@
+wc -c dustox7/slaking > /tmp/info
+wc -c garchomp7/buizel >> /tmp/info
+wc -c garchomp7/houndour >> /tmp/info
+
+chmod u=rwx shieldon1/
+ls -hlu * | head -n 3
+chmod u=wx,g=rw,o=x shieldon1
+
+chmod u=rwx shieldon1/
+chmod u=rwx vanillite marowak
+grep -r -v -i 'e$'
+chmod 066 marowak vanillite
+chmod u=wx,g=rw,o=x shieldon1
+
+chmod u=rwx shieldon1/ shieldon1/vanillite shieldon1/marowak 
+chmod u=rwx dustox7/simisear/ garchomp7/watchog/ garchomp7/drapionfroslass Copy_32/watchog/ Copy_32/drapionfroslass 
+grep -r "r$" | sort 
+
+grep -r "^d" 2>/tmp/rn_errors | sort -r 
+
+find ~ -type f -name 'c*' -print0 | xargs --null ls -lsh | head -n4
+
+
+
+
+rm horsea5 
+rm garchomp7/chandelure
+rm Copy_32
+rm shieldon1/murkrowdodrio 
+rm -r shieldon1/
+chmod u=rwx dustox7/
+rm -r dustox7/croconaw/
+

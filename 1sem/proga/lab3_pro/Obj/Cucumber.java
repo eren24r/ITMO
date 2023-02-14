@@ -1,8 +1,8 @@
 package Obj;
 
-import Classes.Corp;
+import Classes.Stock;
 
-public class Cucumber extends Corp {
+public class Cucumber extends Stock {
     public Cucumber(String name) {
         super(name, 120);
     }

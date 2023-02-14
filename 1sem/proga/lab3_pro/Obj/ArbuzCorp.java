@@ -1,12 +1,12 @@
 package Obj;
 
-import Classes.Corp;
-import Enums.CorpType;
+import Classes.Stock;
+import Enums.StockType;
 
-public class ArbuzCorp extends Corp {
+public class ArbuzCorp extends Stock {
     public ArbuzCorp() {
         super("ArbuzCorp Inc.", 150.4);
-        this.setType(CorpType.BIG);
+        this.setType(StockType.BIG);
     }
     @Override
     public void info() {

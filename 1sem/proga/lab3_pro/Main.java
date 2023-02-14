@@ -1,23 +1,25 @@
-import Classes.Client;
-import Classes.Corp;
+import Classes.Korotishka;
 import Classes.Stock;
+import Classes.Store;
+import Enums.StockType;
+import Enums.StoreType;
+import Interfaces.Info;
 import Obj.*;
 
-import java.awt.image.CropImageFilter;
 import java.util.Random;
-import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        Corp big = new ArbuzCorp();
+        Stock big = new ArbuzCorp();
         System.out.println(big.getName() + " is a bigger Corp");
         System.out.println(big.getPrice() + " USD");
-        System.out.println(Stock.pricetoRUB(big.getPrice()) + " RUB");
+        System.out.println(big.pricetoRUB() + " RUB");
         System.out.println(big.getType()); nl();
-        Corp[] korotishka = new Corp[25];
+        Stock[] korotishka = new Stock[25];
 
         for (int i = 0; i <= 24; i++) {
             String name = "Коротышка " + i;
-            korotishka[i] = new Corp(name, new Random().nextInt(1, 50));
+            korotishka[i] = new Stock(name, new Random().nextInt(1, 50));
             //System.out.println(korotishka[i].getPrice());
         }
 
@@ -51,9 +53,12 @@ public class Main {
         neznayka.info();
         nl();
 
-        Stock.buyStock(neznayka, cucumbers[0], 10);
+        neznayka.buyStock(cucumbers[0], 10);
         System.out.println(cucumbers[0].getPrice()); nl();
-        neznayka.stocks(); nl();
+        Stock nulStock = new Stock("Nul Stock", 0);
+        System.out.println(nulStock.getPrice());
+        neznayka.buyStock(nulStock, 10);
+        neznayka.listOfStocks(); nl();
         neznayka.inScafandara();
         neznayka.gotoKosmos(); nl();
         Sedenkiy sed = new Sedenkiy();
@@ -61,19 +66,36 @@ public class Main {
             if (new Random().nextInt(1, 2) == 1) {
                 int ii = new Random().nextInt(0, 24);
                 int price = new Random().nextInt(1, 20);
-                Stock.buyStock(sed, korotishka[ii], price);
+                sed.buyStock(korotishka[ii], price);
             } else {
                 int ii = new Random().nextInt(0, 8);
                 int price = new Random().nextInt(1, 20);
-                Stock.buyStock(sed, cucumbers[ii], price);
+                sed.buyStock(cucumbers[ii], price);
             }
         }
 
         nl();
-        sed.stocks();
+        sed.listOfStocks();
         sed.addMoney(1);
-    }
 
+        Korotishka Dzulio = new Korotishka("Жулио", 500);
+        Dzulio.createStore("DZ Store", StoreType.small);
+        Dzulio.getStore().getProducts();
+        Store.Workers DzulioWorkers = Dzulio.getStore().new Workers();
+        Korotishka workers1 = new Korotishka("Незнайка", 45);
+        Korotishka workers2 = new Korotishka("Козлик", 55);
+        DzulioWorkers.addWorker(workers1);
+        DzulioWorkers.addWorker(workers2);
+        System.out.println(Dzulio.getMoney());
+        System.out.println("Day1:");
+        Dzulio.getStore().work();
+        System.out.println(Dzulio.getStore().getSalary());
+        System.out.println(Dzulio.getMoney()); nl();
+        System.out.println("Day2:");
+        Dzulio.getStore().work();
+        System.out.println(Dzulio.getStore().getSalary());
+        System.out.println(Dzulio.getMoney());nl();
+    }
     public static void nl() {
         System.out.println();
     }

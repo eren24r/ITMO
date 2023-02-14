@@ -1,47 +1,43 @@
 package Classes;
 
-import Interfaces.CorpIn;
+import Enums.StockType;
+import Interfaces.StockIn;
 import Interfaces.AricmeticksLambda;
 import Interfaces.DualArif;
 
-public class Stock implements CorpIn {
+public class Stock implements StockIn {
     protected double price;
+    protected String name;
+    protected StockType type = StockType.NORMAL;
 
-    public Stock(double price){
-        this.price = price;
+    public Stock(String name, double price){
+        this.name = name; this.price = price;
+    }
+
+    protected void setType(StockType type){
+        this.type = type;
+    }
+    public String getName(){
+        return this.name;
+    }
+
+    public StockType getType(){
+        return this.type;
     }
 
     public double getPrice(){
         return this.price;
     }
 
-    public static double pricetoRUB(double price){
-        AricmeticksLambda i = (n) -> (n * 60.32);
-        return i.arigmetics(price);
+    public double pricetoRUB(){
+        AricmeticksLambda priceToRub = (n) -> (n * 60.32);
+        return priceToRub.arigmetics(this.price);
     }
 
-    public static boolean buyStock(Client cl, Corp c, double price){
-        if (cl.getMoney() >= price) {
-            AricmeticksLambda i = (n) -> ((n / 100) * 20);
-            if (i.arigmetics(c.getPrice()) > price) {
-                c.addPrice(price);
-                System.out.println((cl.name + " купил акцию " + c.getName()));
-                cl.minusMoney(price);
-                cl.addStock(c);
-                return true;
-            } else {
-                System.out.println("Не получиться купить акции " + c.getName());
-                return false;
-            }
-        }else{
-            System.out.println("Не достаточно денег!");
-            return false;
-        }
-    }
     @Override
     public boolean addPrice(double n) {
-        DualArif i = (nn, k) -> (nn + k);
-        this.price = i.dualArig(this.price, n);
+        DualArif summMoney = (nn, k) -> (nn + k);
+        this.price = summMoney.dualArig(this.price, n);
         return true;
     }
 

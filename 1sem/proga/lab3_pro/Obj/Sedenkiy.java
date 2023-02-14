@@ -1,8 +1,9 @@
 package Obj;
 
-import Classes.Client;
+import Classes.Korotishka;
+import Interfaces.Info;
 
-public class Sedenkiy extends Client {
+public class Sedenkiy extends Korotishka {
     public Sedenkiy() {
         super("Sedenkiy", 100000);
     }

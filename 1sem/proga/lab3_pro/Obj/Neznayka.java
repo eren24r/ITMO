@@ -1,9 +1,9 @@
 package Obj;
 
-import Classes.Client;
-import Classes.Stock;
+import Classes.Korotishka;
+import Interfaces.Info;
 
-public class Neznayka extends Client {
+public class Neznayka extends Korotishka {
 
     public Neznayka() {
         super("Neznayka", 50);
@@ -28,4 +28,5 @@ public class Neznayka extends Client {
             return false;
         }
     }
+
 }

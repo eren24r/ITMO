@@ -7,6 +7,9 @@ import java.io.*;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * Команды
+ */
 public class Commands {
     public static int sizeOfSetNotSaved = 0;
     public static void help(){
@@ -165,6 +168,16 @@ public class Commands {
         }
     }
 
+    public static Organization getById(HashSet<Organization> s, int i){
+        Organization k = null;
+        for(Organization o: s){
+            if(o.getId() == i){
+                k = o;
+            }
+        }
+        return k;
+    }
+
     public static void save(HashSet<Organization> set){
         ParseIng.dataEraser();
         HashMap<Integer, Organization> al = Commands.sort(set);
@@ -208,7 +221,10 @@ public class Commands {
         return s;
     }
     public static Float average_of_annual_turnover(HashSet<Organization> set){
-        return Commands.sum_of_annual_turnover(set) / set.size();
+        if(set.size() > 0) {
+            return Commands.sum_of_annual_turnover(set) / set.size();
+        }
+        return null;
     }
 
     public static HashMap<Integer, Organization> sort(HashSet<Organization> set){

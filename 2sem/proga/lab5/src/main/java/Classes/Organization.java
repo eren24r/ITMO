@@ -3,6 +3,9 @@ package Classes;
 import java.time.LocalDateTime;
 import Datas.ParseIng;
 
+/**
+ * Организация
+ */
 public class Organization {
     private int id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     private String name; //Поле не может быть null, Строка не может быть пустой

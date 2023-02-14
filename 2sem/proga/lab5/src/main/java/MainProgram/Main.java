@@ -1,11 +1,15 @@
 package MainProgram;
 
-import Classes.*;
+import Classes.Commands;
+import Classes.Organization;
+import Datas.ParseIng;
+
 import java.io.*;
 import java.util.HashSet;
-import java.util.Scanner;
-import Datas.*;
 
+/**
+ * Программа
+ */
 public class Main {
     public static void main(String[] args) throws IOException {
         HashSet<Organization> mySet = new HashSet<>();
@@ -19,8 +23,8 @@ public class Main {
                 System.out.println("Ошибка в файле или неправильный путь!");
             }
         }*/
-        ParseIng.fileName = ("Datas/" + args[0]);
         try {
+            ParseIng.fileName = ("Datas/" + args[0]);
             mySet = ParseIng.getOrganizationFromCsv();
             System.out.println("Готова!");
         } catch (FileNotFoundException e) {

@@ -1,5 +1,8 @@
 package Classes;
 
+/**
+ * Кординаты
+ */
 public class Coordinates {
     private Long x; //Значение поля должно быть больше -811, Поле не может быть null
     private float y; //Максимальное значение поля: 416
@@ -11,7 +14,7 @@ public class Coordinates {
 
     @Override
     public String toString() {
-        return (String) ("(" + this.x + "-" + this.y + ")");
+        return (String) ("(" + this.x + "," + this.y + ")");
     }
 
     public Long getX() {

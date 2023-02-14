@@ -7,8 +7,11 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashSet;
 
+/**
+ * Парсинг
+ */
 public class ParseIng {
-    public static String fileName = "../lab5/src/main/java/Datas/data.csv";
+    public static String fileName = "Datas/data.csv";
     public static DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss");
 
     public static void csvWriter(String s) {

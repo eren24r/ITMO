@@ -1,5 +1,8 @@
 package Classes;
 
+/**
+ * Тип Организации
+ */
 public enum OrganizationType {
     PUBLIC(1),
     GOVERNMENT(2),

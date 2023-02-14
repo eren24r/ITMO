@@ -1,5 +1,8 @@
 package Classes;
 
+/**
+ * Адрес Организации
+ */
 public class Address {
     private String street; //Длина строки не должна быть больше 67, Поле не может быть null
     private String zipCode; //Поле не может быть null

@@ -1,13 +1,11 @@
 package Datas;
 
 import Classes.*;
-
 import java.io.*;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashSet;
-import java.util.Set;
 
 public class ParseIng {
     public static String fileName = "../lab5/src/main/java/Datas/data.csv";
@@ -17,6 +15,15 @@ public class ParseIng {
         String tmp = "";
         try (BufferedWriter writter = new BufferedWriter(new FileWriter(fileName, true))) {
             writter.write(s + "\n");
+        } catch (IOException e) {
+            System.out.println("Ошибка в файле или неправильный путь!");
+        }
+    }
+
+    public static void dataEraser() {
+        String tmp = "";
+        try (BufferedWriter writter = new BufferedWriter(new FileWriter(fileName))) {
+            writter.write("id,name,coordinates.x,coordinates.y,creationDate,annualTurnover,type,postalAddressStreet,postalAddressZipCoder" + "\n");
         } catch (IOException e) {
             System.out.println("Ошибка в файле или неправильный путь!");
         }

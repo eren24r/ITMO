@@ -20,9 +20,9 @@ public enum OrganizationType {
 
     public static OrganizationType getTypeById(int i){
         switch(i){
-            case 1 -> {return OrganizationType.PUBLIC;}
-            case 2 -> {return OrganizationType.GOVERNMENT;}
-            case 3 -> {return OrganizationType.TRUST;}
+            case 1: return OrganizationType.PUBLIC;
+            case 2: return OrganizationType.GOVERNMENT;
+            case 3: return OrganizationType.TRUST;
         }
         return null;
     }

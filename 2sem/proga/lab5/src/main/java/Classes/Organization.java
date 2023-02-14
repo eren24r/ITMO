@@ -1,11 +1,7 @@
 package Classes;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
-import java.util.Date;
 
+import java.time.LocalDateTime;
 import Datas.ParseIng;
-import MainProgram.*;
 
 public class Organization {
     private int id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
@@ -27,7 +23,7 @@ public class Organization {
     }
 
     public Organization(String name, Coordinates coordinates, Float annualTurnover, OrganizationType type, Address postalAddress){
-        this.id = ParseIng.getSize();
+        this.id = ParseIng.getSize() + Commands.sizeOfSetNotSaved - 1;
         this.name = name;
         this.coordinates = coordinates;
         this.annualTurnover = annualTurnover;
@@ -42,6 +38,11 @@ public class Organization {
 
     public String toStringCSV() {
         return (String) (this.id + "," + this.name + "," + this.coordinates.getX() + "," + this.coordinates.getY() + "," + this.getCreationDate() + "," + this.annualTurnover + "," + this.type.getId() + "," + this.postalAddress.getStreet() + "," + this.postalAddress.getZipCode());
+    }
+
+    public boolean updateName(String s){
+        this.name = s;
+        return true;
     }
 
     public int getId() {

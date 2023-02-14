@@ -52,9 +52,9 @@ public class Main {
         Organization a = new Organization("a", new Coordinates(45L, 23), 4657F, OrganizationType.TRUST, new Address("Kron", "35435435"));
         ParseIng.csvWriter(a.toStringCSV());*/
 
-        for (Organization o : mySet) {
+        /*for (Organization o : mySet) {
             System.out.println(o.toStringCSV());
-        }
+        }*/
 
     }
     public static void nl(){

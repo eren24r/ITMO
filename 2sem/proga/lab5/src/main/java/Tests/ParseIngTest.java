@@ -5,11 +5,11 @@ import Classes.Coordinates;
 import Classes.Organization;
 import Classes.OrganizationType;
 import Datas.ParseIng;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 
 import java.time.LocalDateTime;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.testng.AssertJUnit.assertEquals;
 
 public class ParseIngTest {
     @Test

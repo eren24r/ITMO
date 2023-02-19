@@ -1,8 +1,8 @@
 package Tests;
 import Classes.Coordinates;
-import org.junit.jupiter.api.Test;
-
+import org.testng.annotations.Test;
 import static org.testng.AssertJUnit.assertEquals;
+
 
 public class CordinatesTest {
     @Test

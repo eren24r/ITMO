@@ -4,6 +4,7 @@ import Classes.*;
 import org.testng.annotations.Test;
 
 import java.util.HashSet;
+
 import static org.testng.AssertJUnit.assertEquals;
 
 public class CommandsTest {
@@ -14,7 +15,7 @@ public class CommandsTest {
         s.add(new Organization("dsdf", new Coordinates(4365L,546), 4354F, OrganizationType.getTypeById(2), new Address("345435", "543543")));
         s.add(new Organization("sdfds", new Coordinates(4365L,546), 4354F, OrganizationType.getTypeById(2), new Address("345435", "543543")));
         s.add(new Organization("dsfsdfsdff", new Coordinates(4365L,546), 4354F, OrganizationType.getTypeById(2), new Address("345435", "543543")));
-        assertEquals(13062, Commands.sum_of_annual_turnover(s));
+        assertEquals(13062F, Commands.sum_of_annual_turnover(s));
     }
 
     @Test
@@ -23,7 +24,7 @@ public class CommandsTest {
         s.add(new Organization("dsdf", new Coordinates(4365L,546), 4354F, OrganizationType.getTypeById(2), new Address("345435", "543543")));
         s.add(new Organization("sdfds", new Coordinates(4365L,546), 4354F, OrganizationType.getTypeById(2), new Address("345435", "543543")));
         s.add(new Organization("dsfsdfsdff", new Coordinates(4365L,546), 4354F, OrganizationType.getTypeById(2), new Address("345435", "543543")));
-        assertEquals(4354, Commands.average_of_annual_turnover(s));
+        assertEquals(4354F, Commands.average_of_annual_turnover(s));
     }
 
     @Test

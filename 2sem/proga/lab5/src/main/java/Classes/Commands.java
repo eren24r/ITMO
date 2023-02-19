@@ -2,11 +2,19 @@ package Classes;
 
 import Datas.ParseIng;
 import MainProgram.Main;
+import com.diogonunes.jcolor.Attribute;
 
-import java.io.*;
-import java.util.*;
-import java.util.stream.Collectors;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
 
+import static com.diogonunes.jcolor.Ansi.colorize;
+
+//todo change_serialization_type JSON|CSV
 /**
  * Команды
  */
@@ -14,7 +22,7 @@ public class Commands {
     public static int sizeOfSetNotSaved = 0;
     public static void help(){
         String s = "help : справка по доступным командам\ninfo : информация о коллекции\nshow : все элементы коллекции в строковом представлении\nadd element_name : добавить новый элемент в коллекцию\nupdate id new_element : обновить значение элемента коллекции\nremove_by_id id : удалить элемент из коллекции по его id\nclear : очистить коллекцию\nsave : сохранить коллекцию в файл\nexecute_script file_name : считать и исполнить скрипт из указанного файла\nsum_of_annual_turnover : сумма значений поля annualTurnover для всех элементов коллекции\naverage_of_annual_turnover : среднее значение поля annualTurnover для всех элементов коллекции\nprint_descending : вывести элементы коллекции в порядке убывания\n\nexit : завершить программу (без сохранения в файл)";
-        txt(s);
+        txt((colorize(s, Attribute.GREEN_TEXT())));
     }
 
     public static void info(Set<Organization> s){
@@ -27,12 +35,12 @@ public class Commands {
         txt("type - тип организации");
         txt("postalAddress - адрес");
 
-        txt("Количество элементов Колекции: " + s.size());
+        txt(colorize("Количество элементов Колекции: " + s.size(), Attribute.GREEN_TEXT()));
     }
 
     public static void show(HashSet<Organization> s){
         for(Organization o: s){
-            System.out.println(o.toString());
+            System.out.println(colorize(o.toString(), Attribute.BLUE_TEXT()));
         }
     }
 
@@ -47,79 +55,79 @@ public class Commands {
         String[] dt = name.split(" ");
         nm = dt[1];
         if(nm.length() > 0) {
-            txt("Создание объекта " + dt[1]);
+            txt(colorize("Создание объекта " + dt[1], Attribute.BOLD()));
             //cordinates
             while (crX == 0L) {
-                txt("Кординаты Огранизации(x,y через пробел):");
+                txt(colorize("Кординаты Огранизации(x,y через пробел):", Attribute.BOLD()));
                 String[] xY = s.nextLine().split(" ");
                 try {
                     if (Long.parseLong(xY[0]) >= (-811) && Float.parseFloat(xY[1]) != Math.E) {
                         crX = Long.parseLong(xY[0]);
                         crY = Float.parseFloat(xY[1]);
-                        txt("Кординаты добавлены!");
+                        txt(colorize("Кординаты добавлены!", Attribute.GREEN_TEXT(), Attribute.BOLD()));
                     } else {
-                        txt("Кордината X должно быть больше -811");
+                        txt(colorize("Кордината X должно быть больше -811", Attribute.RED_TEXT()));
                     }
                 } catch (Exception e) {
-                    txt("Ошибка формата!");
+                    txt(colorize("Ошибка формата!", Attribute.RED_TEXT()));
                 }
             }
 
             //annualTurnover
             while (annualTurnover == 0L) {
-                txt("Годовой оборот:");
+                txt(colorize("Годовой оборот:", Attribute.BOLD()));
                 String an = s.nextLine();
                 try {
                     if (Float.parseFloat(an) > 0) {
                         annualTurnover = Float.parseFloat(an);
-                        txt("Годовой оборот добавлен!");
+                        txt(colorize("Годовой оборот добавлен!", Attribute.GREEN_TEXT(), Attribute.BOLD()));
                     } else {
-                        txt("Годовой оборот должно быть больше 0");
+                        txt(colorize("Годовой оборот должно быть больше 0", Attribute.RED_TEXT()));
                     }
                 } catch (Exception e) {
-                    txt("Ошибка формата!");
+                    txt(colorize("Ошибка формата!", Attribute.RED_TEXT()));
                 }
             }
 
             //Type
             int tp = 0;
             while (tp == 0L) {
-                txt("Тип Огранизации:\n1 - PUBLIC\n2 - GOVERNMENT\n3 - TRUST");
+                txt(colorize("Тип Огранизации:\n1 - PUBLIC\n2 - GOVERNMENT\n3 - TRUST", Attribute.BOLD()));
                 String tptmp = s.nextLine();
                 try {
                     if (Integer.parseInt(tptmp) > 0 && Integer.parseInt(tptmp) <= 3) {
                         tp = Integer.parseInt(tptmp);
-                        txt("Тип Огранизации добавленa!");
+                        txt(colorize("Тип Огранизации добавленa!", Attribute.GREEN_TEXT(), Attribute.BOLD()));
                     } else {
-                        txt("Тип огранизации введена некорректно!");
+                        txt(colorize("Тип огранизации введена некорректно!", Attribute.RED_TEXT()));
                     }
                 } catch (Exception e) {
-                    txt("Ошибка формата!");
+                    txt(colorize("Ошибка формата!", Attribute.RED_TEXT()));
                 }
             }
 
             //Street
-            while (street.length() == 0L) {
-                txt("Адрес. Название улицы: ");
+            while (street.length() == 0) {
+                txt(colorize("Адрес. Название улицы: ",Attribute.BOLD()));
                 String strna = s.nextLine();
-                if (strna.length() <= 67) {
+                if (strna.length() != 0 && strna.length() <= 67) {
                     street = strna;
-                    txt("Название улицы добавленa!");
+                    txt(colorize("Название улицы добавленa!", Attribute.GREEN_TEXT(), Attribute.BOLD()));
                 } else {
-                    txt("Длина строки не должна быть больше 67!");
+                    txt(colorize("Длина строки не должна быть больше 67!", Attribute.RED_TEXT()));
                 }
             }
             //zipCode
-            txt("Zip-Code: ");
+            txt(colorize("Zip-Code: ",Attribute.BOLD()));
             zipCode = s.nextLine();
-            txt("Zip-Code добавлен!"); Main.nl();
+            txt(colorize("Zip-Code добавлен!",Attribute.GREEN_TEXT(), Attribute.BOLD())); Main.nl();
 
-            txt("Организация " + nm + " добавлена!");
+            txt(colorize("Организация " + nm + " добавлена!", Attribute.GREEN_TEXT(), Attribute.BOLD()));
             sizeOfSetNotSaved = sizeOfSetNotSaved + 1;
             Organization tmpOr = new Organization(nm, new Coordinates(crX, crY), annualTurnover, OrganizationType.getTypeById(tp), new Address(street, zipCode));
             return tmpOr;
         }else {
-            txt("Название Организации Некорректно!");
+            txt(colorize("Название Организации Некорректно!", Attribute.RED_TEXT()));
             return null;
         }
     }
@@ -138,10 +146,10 @@ public class Commands {
                 }
             }
             if(b == true){
-                txt("Объект изменено!");
+                txt(colorize("Объект изменено!", Attribute.GREEN_TEXT(), Attribute.BOLD()));
             }
         } catch (Exception e) {
-            txt("Ошибка формата!");
+            txt(colorize("Ошибка формата!", Attribute.RED_TEXT()));
         }
     }
 
@@ -161,10 +169,10 @@ public class Commands {
             }
             if(b == true){
                 set.remove(bb);
-                txt("Объект удалено!");
+                txt(colorize("Объект удалено!", Attribute.GREEN_TEXT(), Attribute.BOLD()));
             }
         } catch (Exception e) {
-            txt("Ошибка формата!");
+            txt(colorize("Ошибка формата!", Attribute.RED_TEXT()));
         }
     }
 
@@ -184,7 +192,7 @@ public class Commands {
         for(Organization o: al.values()){
             ParseIng.csvWriter(o.toStringCSV());
         }
-        txt("Коллекция успешно сохранено!");
+        txt(colorize("Коллекция успешно сохранено!", Attribute.GREEN_TEXT(), Attribute.BOLD()));
     }
 
     public static void execute_script(HashSet<Organization> mySet, String s){
@@ -205,11 +213,11 @@ public class Commands {
                         }
                     }
                 } catch (IOException e) {
-                    System.out.println("Ошибка в файле или неправильный путь!");
+                    System.out.println(colorize("Ошибка в файле или неправильный путь!", Attribute.RED_TEXT()));
                 }
             }
         } catch (Exception e) {
-            txt("Ошибка формата!");
+            txt(colorize("Ошибка формата!", Attribute.RED_TEXT()));
         }
     }
 

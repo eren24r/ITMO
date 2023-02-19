@@ -3,9 +3,12 @@ package MainProgram;
 import Classes.Commands;
 import Classes.Organization;
 import Datas.ParseIng;
+import com.diogonunes.jcolor.Attribute;
 
 import java.io.*;
 import java.util.HashSet;
+
+import static com.diogonunes.jcolor.Ansi.colorize;
 
 /**
  * Программа
@@ -23,12 +26,12 @@ public class Main {
                 System.out.println("Ошибка в файле или неправильный путь!");
             }
         }*/
+        ParseIng.fileName = ("Datas/" + args[0]);
         try {
-            ParseIng.fileName = ("Datas/" + args[0]);
             mySet = ParseIng.getOrganizationFromCsv();
             System.out.println("Готова!");
         } catch (FileNotFoundException e) {
-            System.out.println("Ошибка в файле или неправильный путь!");
+            System.out.println(colorize(("Ошибка в файле или неправильный путь!"), Attribute.RED_TEXT()));
         }
         nl();
         String outputFileName = ParseIng.fileName;

@@ -1,9 +1,8 @@
 package Tests;
 
 import Classes.OrganizationType;
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.testng.annotations.Test;
+import static org.testng.AssertJUnit.assertEquals;
 
 public class OrganizationTypeTest {
     @Test

@@ -1,0 +1,31 @@
+package dataParseIng;
+
+import java.io.*;
+
+public class CsvJson {
+    public int getIsCsv(){
+        int sz;
+        BufferedReader reader = null;
+        try {
+            reader = new BufferedReader(new FileReader(".tmp/files/tmp.txt"));
+            String line;
+            line = reader.readLine();
+            sz = Integer.parseInt(line.split(" ")[0]);
+            return sz;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public boolean saveIsCsv(int isCsv){
+        DataParse dp = new DataParse();
+        dp.dataEraserJson(".tmp/files/tmp.txt");
+        try (BufferedWriter writter = new BufferedWriter(new FileWriter(".tmp/files/tmp.txt"))) {
+            writter.write(String.valueOf(isCsv));
+        } catch (IOException e) {
+            System.out.println("Ошибка!");
+            return false;
+        }
+        return true;
+    }
+}

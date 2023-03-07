@@ -1,0 +1,4 @@
+execute_script sr1
+execute_script sr2
+show
+save

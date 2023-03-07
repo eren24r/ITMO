@@ -1,15 +1,19 @@
 plugins {
-    id 'java'
+    id 'java-library'
 }
 
-group 'MainProgram'
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+group 'mainProgram'
 version '1.0'
 
 repositories {
     mavenCentral()
-    google()
 }
-
 jar{
     baseName = 'lab5'
     manifest {
@@ -18,9 +22,9 @@ jar{
 }
 
 dependencies {
-    implementation 'org.junit.jupiter:junit-jupiter:5.8.1'
-    implementation 'org.testng:testng:7.1.0'
     implementation 'com.diogonunes:JColor:5.5.1'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.7.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
 }
 
 test {

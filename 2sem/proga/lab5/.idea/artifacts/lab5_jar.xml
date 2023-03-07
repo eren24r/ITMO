@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="lab5:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/lab5_jar</output-path>
+    <root id="archive" name="lab5.jar">
+      <element id="module-output" name="lab5.main" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.diogonunes/JColor/5.5.1/2421e902077e3845c8e93867d3e1ff4e94f7bcc5/JColor-5.5.1.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

@@ -1,5 +1,6 @@
 package dataParseIng;
 
+import com.diogonunes.jcolor.Attribute;
 import statics.Static;
 
 import java.io.BufferedWriter;
@@ -12,7 +13,7 @@ public class JsonWriter{
         try (BufferedWriter writter = new BufferedWriter(new FileWriter(fileName, true))) {
             writter.write(s + "\n");
         } catch (IOException e) {
-            Static.txt("Ошибка в файле или неправильный путь!");
+            Static.txt("Ошибка в файле или неправильный путь!", Attribute.RED_TEXT());
             return false;
         }
         return true;

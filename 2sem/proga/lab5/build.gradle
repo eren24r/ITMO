@@ -19,11 +19,15 @@ jar{
     manifest {
         attributes 'Main-Class':'MainProgram.Main'
     }
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
 }
 
 dependencies {
     implementation 'com.diogonunes:JColor:5.5.1'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.7.1'
+    implementation 'org.fusesource.jansi:jansi:2.3.2'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
 }
 

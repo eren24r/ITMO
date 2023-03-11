@@ -1,5 +1,8 @@
 package dataParseIng;
 
+import com.diogonunes.jcolor.Attribute;
+import statics.Static;
+
 import java.io.*;
 
 public class CsvJson {
@@ -23,7 +26,7 @@ public class CsvJson {
         try (BufferedWriter writter = new BufferedWriter(new FileWriter(".tmp/files/tmp.txt"))) {
             writter.write(String.valueOf(isCsv));
         } catch (IOException e) {
-            System.out.println("Ошибка!");
+            Static.txt("Ошибка!", Attribute.RED_TEXT());
             return false;
         }
         return true;

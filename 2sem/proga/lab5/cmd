@@ -1,16 +1,23 @@
-"help : справка по доступным командам\n
-info : информация о коллекции\n
-show : все элементы коллекции в строковом представлении\n
-add element_name : добавить новый элемент в коллекцию\n
-update id new_element : обновить значение элемента коллекции\n
-remove_by_id id : удалить элемент из коллекции по его id\n
-clear : очистить коллекцию\n
-save : сохранить коллекцию в файл\n
-execute_script file_name : считать и исполнить скрипт из указанного файла\n
-sum_of_annual_turnover : сумма значений поля annualTurnover для всех элементов коллекции\n
-average_of_annual_turnover : среднее значение поля annualTurnover для всех элементов коллекции\n
-print_descending : вывести элементы коллекции в порядке убывания\n
-change_serialization_type_JSON|CSV\n
-Serialization_type\n\nexit : завершить программу (без сохранения в файл)";
+help : справка по доступным командам
+info : информация о коллекции
+show : все элементы коллекции в строковом представлении
+add element_name : добавить новый элемент в коллекцию
+update id new_element : обновить значение элемента коллекции
+remove_by_id id : удалить элемент из коллекции по его id
+clear : очистить коллекцию
+save : сохранить коллекцию в файл
+execute_script file_name : считать и исполнить скрипт из указанного файла
+sum_of_annual_turnover : сумма значений поля annualTurnover для всех элементов коллекции
+average_of_annual_turnover : среднее значение поля annualTurnover для всех элементов коллекции
+print_descending : вывести элементы коллекции в порядке убывания
+change_serialization_type_JSON
+change_serialization_type_CSV
+Serialization_type
+exit : завершить программу (без сохранения в файл)
 
+
+add_command name - добавить команду
+change_print_logic_file - записивать вывод в log файл
+change_print_logic_console - печатаеть вывод в консол
+print_logic_type - тип вывода! 
 

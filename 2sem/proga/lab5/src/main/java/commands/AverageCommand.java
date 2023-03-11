@@ -1,5 +1,6 @@
 package commands;
 
+import com.diogonunes.jcolor.Attribute;
 import statics.Static;
 import сlasses.Organization;
 
@@ -17,7 +18,7 @@ public class AverageCommand implements Command{
                 av = av + o.getAnnualTurnover();
             }
             av = av / mySet.size();
-            Static.txt(("average of annual turnover: " + av));
+            Static.txt(("average of annual turnover: " + av), Attribute.NONE());
             return true;
         }
         return false;

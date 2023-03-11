@@ -1,5 +1,6 @@
 package commands;
 
+import collEdit.GetSizeOfCollection;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import statics.Static;
@@ -9,8 +10,6 @@ import сlasses.Organization;
 
 import java.io.IOException;
 import java.util.HashSet;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class RemoveByIdCommandTest {
     SumCommand smCmd = new SumCommand();

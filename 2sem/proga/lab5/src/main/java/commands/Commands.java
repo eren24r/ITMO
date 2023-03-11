@@ -20,6 +20,8 @@ public class Commands {
                 c.doo(mySet, line);
             }
         }
+        Static.listOfCommand.putAll(Static.listOfNewCommand);
+        Static.listOfNewCommand.clear();
         return true;
     }
 }

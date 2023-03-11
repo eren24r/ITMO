@@ -1,5 +1,8 @@
 package dataParseIng;
 
+import com.diogonunes.jcolor.Attribute;
+import statics.Static;
+
 import java.io.*;
 
 public class DataParse {
@@ -8,7 +11,7 @@ public class DataParse {
         try (BufferedWriter writter = new BufferedWriter(new FileWriter(fileName))) {
             writter.write("id,name,coordinates.x,coordinates.y,creationDate,annualTurnover,type,postalAddressStreet,postalAddressZipCoder" + "\n");
         } catch (IOException e) {
-            System.out.println("Ошибка в файле или неправильный путь!");
+            Static.txt("Ошибка в файле или неправильный путь!", Attribute.RED_TEXT());
             return false;
         }
         return true;
@@ -19,7 +22,7 @@ public class DataParse {
         try (BufferedWriter writter = new BufferedWriter(new FileWriter(fileName))) {
             writter.write("");
         } catch (IOException e) {
-            System.out.println("Ошибка в файле или неправильный путь!");
+            Static.txt("Ошибка в файле или неправильный путь!", Attribute.RED_TEXT());
             return false;
         }
         return true;
@@ -34,7 +37,7 @@ public class DataParse {
             }
             return sz - 1;
         } catch (IOException e) {
-            System.out.println("Ошибка в файле или неправильный путь!");
+            Static.txt("Ошибка в файле или неправильный путь!", Attribute.RED_TEXT());
         }
         return 0;
     }

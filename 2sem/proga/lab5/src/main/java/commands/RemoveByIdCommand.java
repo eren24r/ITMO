@@ -6,8 +6,6 @@ import сlasses.Organization;
 
 import java.util.HashSet;
 
-import static com.diogonunes.jcolor.Ansi.colorize;
-
 public class RemoveByIdCommand implements Command{
 
     private String name = "remove_by_id";
@@ -17,6 +15,13 @@ public class RemoveByIdCommand implements Command{
         String[] xY = s.split(" ");
         Object bb = null;
         boolean b = false;
+        boolean isPr = false;
+        if(Static.isPrint == 0){
+            isPr = true;
+            Static.isPrint = 1;
+        }else {
+            isPr = false;
+        }
         try {
             if (Integer.parseInt(xY[1]) >= 0) {
                 for(Organization o: mySet){
@@ -29,10 +34,21 @@ public class RemoveByIdCommand implements Command{
             }
             if(b == true){
                 mySet.remove(bb);
-                Static.txt(colorize("Объект удалено!", Attribute.GREEN_TEXT(), Attribute.BOLD()));
+                if(isPr){
+                    Static.isPrint = 0;
+                }
+                Static.txt("Объект удалено!", Attribute.BOLD());
+            }
+            if(b==false){
+                if(isPr){
+                    Static.isPrint = 0;
+                }
             }
         } catch (Exception e) {
-            Static.txt(colorize("Ошибка формата!", Attribute.RED_TEXT()));
+            Static.txt("Ошибка формата!", Attribute.RED_TEXT());
+            if(isPr){
+                Static.isPrint = 0;
+            }
         }
         return b;
     }

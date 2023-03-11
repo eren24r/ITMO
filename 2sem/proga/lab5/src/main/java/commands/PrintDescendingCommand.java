@@ -1,5 +1,7 @@
 package commands;
 
+import collEdit.Sort;
+import com.diogonunes.jcolor.Attribute;
 import statics.Static;
 import сlasses.Organization;
 
@@ -17,7 +19,7 @@ public class PrintDescendingCommand implements Command {
         for(Organization o: al.values()){
             ss = o.getName() + "\n" + ss;
         }
-        Static.txt(ss);
+        Static.txt(ss, Attribute.NONE());
         return true;
     }
 

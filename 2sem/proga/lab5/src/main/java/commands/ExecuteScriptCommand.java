@@ -10,8 +10,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashSet;
 
-import static com.diogonunes.jcolor.Ansi.colorize;
-
 public class ExecuteScriptCommand implements Command {
 
     private String name = "execute_script";
@@ -40,14 +38,14 @@ public class ExecuteScriptCommand implements Command {
                     }
                     b = true;
                 } catch (IOException e) {
-                    Static.txt(colorize("Ошибка в файле или неправильный путь!", Attribute.RED_TEXT()));
+                    Static.txt("Ошибка в файле или неправильный путь!", Attribute.RED_TEXT());
                     b = false;
                 }
                 return b;
-            }
+            }b = false;
         } catch (Exception e) {
-            Static.txt(colorize("Ошибка формата!", Attribute.RED_TEXT()));
-            b = false;
+            Static.txt("Ошибка формата!", Attribute.RED_TEXT());
+
             return b;
         }
         return b;

@@ -6,8 +6,6 @@ import сlasses.Organization;
 
 import java.util.HashSet;
 
-import static com.diogonunes.jcolor.Ansi.colorize;
-
 public class InfoCommands implements Command{
     private String name = "info";
 
@@ -18,16 +16,16 @@ public class InfoCommands implements Command{
 
     @Override
     public boolean doo(HashSet<Organization> set, String s) {
-        Static.txt("Класс:    Organization");
-        Static.txt("id - identification number");
-        Static.txt("name - Название Огранизации");
-        Static.txt("coordinates - кординаты огранизации");
-        Static.txt("creationDate - дата создания");
-        Static.txt("annualTurnover - годовой оборот");
-        Static.txt("type - тип организации");
-        Static.txt("postalAddress - адрес");
+        Static.txt("Класс:    Organization", Attribute.NONE());
+        Static.txt("id - identification number", Attribute.NONE());
+        Static.txt("name - Название Огранизации", Attribute.NONE());
+        Static.txt("coordinates - кординаты огранизации", Attribute.NONE());
+        Static.txt("creationDate - дата создания", Attribute.NONE());
+        Static.txt("annualTurnover - годовой оборот", Attribute.NONE());
+        Static.txt("type - тип организации", Attribute.NONE());
+        Static.txt("postalAddress - адрес", Attribute.NONE());
 
-        Static.txt(colorize("Количество элементов Колекции: " + set.size(), Attribute.GREEN_TEXT()));
+        Static.txt("Количество элементов Колекции: " + set.size(), Attribute.GREEN_TEXT());
         return true;
     }
 

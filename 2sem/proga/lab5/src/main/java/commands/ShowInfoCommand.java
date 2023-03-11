@@ -6,15 +6,13 @@ import сlasses.Organization;
 
 import java.util.HashSet;
 
-import static com.diogonunes.jcolor.Ansi.colorize;
-
 public class ShowInfoCommand implements Command{
     private String name = "show";
 
     @Override
     public boolean doo(HashSet<Organization> mySet, String s) {
         for(Organization o: mySet){
-            Static.txt(colorize(o.toString(), Attribute.BLUE_TEXT()));
+            Static.txt(o.toString(), Attribute.BLUE_TEXT());
         }
         return true;
     }

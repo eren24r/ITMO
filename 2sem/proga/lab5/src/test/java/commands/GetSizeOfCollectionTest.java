@@ -1,5 +1,6 @@
 package commands;
 
+import collEdit.GetSizeOfCollection;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import statics.Static;

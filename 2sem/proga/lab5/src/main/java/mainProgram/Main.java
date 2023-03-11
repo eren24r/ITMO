@@ -2,8 +2,10 @@ package mainProgram;
 
 import com.diogonunes.jcolor.Attribute;
 import commands.*;
+import commandsEditor.CommandNew;
 import dataParseIng.CsvJson;
 import dataParseIng.ParseIng;
+import startMain.Stating;
 import statics.Static;
 import сlasses.Organization;
 
@@ -28,6 +30,13 @@ public class Main {
         SaveCommand svCmd = new SaveCommand();
         ExecuteScriptCommand exSrCmd = new ExecuteScriptCommand();
         CsvJson csvJson = new CsvJson();
+
+        CommandNew cmdEd = new CommandNew();
+        cmdEd.newCommadsReader();
+
+        Stating st = new Stating();
+        st.saveDate();
+
         /*Scanner scr = new Scanner(System.in);
         while (mySet.isEmpty())  {
             System.out.println("Укажите название файла! (data.csv)");
@@ -45,16 +54,16 @@ public class Main {
         if(Static.isCsv == 1) {
             try {
                 mySet = parseCol.getOrganizationFromCsv();
-                Static.txt("Готова!");
+                Static.txt("Готова!", Attribute.GREEN_TEXT());
             } catch (FileNotFoundException e) {
-                Static.txt(colorize(("Ошибка в файле или неправильный путь!"), Attribute.RED_TEXT()));
+                Static.txt("Ошибка в файле или неправильный путь!", Attribute.RED_TEXT());
             }
         }else if(Static.isCsv == 0){
             try {
                 mySet = parseCol.getOrganizationFromJson();
-                Static.txt("Готова!");
+                Static.txt("Готова!", Attribute.GREEN_TEXT());
             } catch (FileNotFoundException e) {
-                Static.txt(colorize(("Ошибка в файле или неправильный путь!"), Attribute.RED_TEXT()));
+                Static.txt("Ошибка в файле или неправильный путь!", Attribute.RED_TEXT());
             }
         }
         System.out.print(colorize("> ", Attribute.BOLD(), Attribute.BLUE_TEXT()));

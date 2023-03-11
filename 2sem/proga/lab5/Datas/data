@@ -1,6 +1,14 @@
-{"id":4,"name":"man","coordinates":{"x":345,"y":435.0},"creationDate":"11.03.2023 17:42:00","annualTurnover":43534.0,"type":"TRUST","postalAddress":{"street":"erregr","zipCode":"ergreg"}}
-{"id":5,"name":"dnvkdv","coordinates":{"x":435,"y":43543.0},"creationDate":"11.03.2023 18:01:17","annualTurnover":5464.0,"type":"TRUST","postalAddress":{"street":"grugir","zipCode":"greg"}}
-{"id":6,"name":"man","coordinates":{"x":456,"y":54.0},"creationDate":"11.03.2023 18:04:11","annualTurnover":435.0,"type":"GOVERNMENT","postalAddress":{"street":"5435","zipCode":"345"}}
-{"id":7,"name":"sdf:DSf","coordinates":{"x":345,"y":345.0},"creationDate":"11.03.2023 18:28:24","annualTurnover":345.0,"type":"GOVERNMENT","postalAddress":{"street":"43543","zipCode":"4t4"}}
-{"id":8,"name":"hello","coordinates":{"x":435,"y":45.0},"creationDate":"11.03.2023 18:42:40","annualTurnover":435435.0,"type":"GOVERNMENT","postalAddress":{"street":"345","zipCode":"35"}}
-{"id":9,"name":"hello","coordinates":{"x":543,"y":543.0},"creationDate":"11.03.2023 18:43:42","annualTurnover":43.0,"type":"TRUST","postalAddress":{"street":"54","zipCode":"34"}}
+id,name,coordinates.x,coordinates.y,creationDate,annualTurnover,type,postalAddressStreet,postalAddressZipCoder
+"4","man","345","435.0","11.03.2023 17:42:00","43534.0","TRUST","erregr","ergreg"
+"8","hello","435","45.0","11.03.2023 18:42:40","435435.0","GOVERNMENT","345","35"
+"9","hello","543","543.0","11.03.2023 18:43:42","43.0","TRUST","54","34"
+"11","man","45","435.0","11.03.2023 22:21:59","435.0","GOVERNMENT","th","hr"
+"12","kill","435","435.0","11.03.2023 22:23:18","345.0","GOVERNMENT","343","324"
+"13","element_name","435","3.0","11.03.2023 22:28:43","53453.0","GOVERNMENT","gddfgd","353"
+"15","element_name","435","54.0","11.03.2023 22:32:41","435.0","GOVERNMENT","435","345"
+"16","element_name","45","46.0","11.03.2023 22:33:43","435.0","GOVERNMENT","tyt","rt"
+"17","element_name","345","4.0","11.03.2023 22:34:28","43534.0","GOVERNMENT","435","fdg"
+"18","element_name","345","54.0","11.03.2023 22:37:55","345.0","GOVERNMENT","4ghg","345"
+"19","element_name","435","345.0","11.03.2023 22:38:47","345.0","PUBLIC","gfd","3453"
+"20","element_name","435","46.0","11.03.2023 22:39:17","6456.0","GOVERNMENT","rt","435"
+"21","element_name","435","5.0","11.03.2023 22:43:22","435.0","GOVERNMENT","35","34"

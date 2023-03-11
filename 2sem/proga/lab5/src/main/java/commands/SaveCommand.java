@@ -1,5 +1,6 @@
 package commands;
 
+import collEdit.Sort;
 import com.diogonunes.jcolor.Attribute;
 import dataParseIng.CsvWriter;
 import dataParseIng.DataParse;
@@ -9,8 +10,6 @@ import сlasses.Organization;
 
 import java.util.HashMap;
 import java.util.HashSet;
-
-import static com.diogonunes.jcolor.Ansi.colorize;
 
 public class SaveCommand implements Command{
     DataParse dt = new DataParse();
@@ -27,7 +26,7 @@ public class SaveCommand implements Command{
             for (Organization o : al.values()) {
                 csvWr.csvWriter(o.toStringCSV(), Static.fileName);
             }
-            Static.txt(colorize("Коллекция успешно сохранено!", Attribute.GREEN_TEXT(), Attribute.BOLD()));
+            Static.txt("Коллекция успешно сохранено!",Attribute.BOLD());
             return true;
         }
         if(Static.isCsv == 0) {
@@ -36,7 +35,7 @@ public class SaveCommand implements Command{
             for (Organization o : al.values()) {
                 jsnWr.jsonWriter(o.toStringJson(), Static.fileName);
             }
-            Static.txt(colorize("Коллекция успешно сохранено!", Attribute.GREEN_TEXT(), Attribute.BOLD()));
+            Static.txt("Коллекция успешно сохранено!",Attribute.BOLD());
             return true;
         }else {
             return false;

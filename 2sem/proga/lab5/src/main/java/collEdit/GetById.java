@@ -1,4 +1,4 @@
-package commands;
+package collEdit;
 
 import сlasses.Organization;
 

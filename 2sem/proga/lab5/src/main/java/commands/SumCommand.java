@@ -1,5 +1,6 @@
 package commands;
 
+import com.diogonunes.jcolor.Attribute;
 import statics.Static;
 import сlasses.Organization;
 
@@ -14,7 +15,7 @@ public class SumCommand implements Command{
         for(Organization o: mySet){
             ss = ss + o.getAnnualTurnover();
         }
-        Static.txt(("sum of annual turnover: " + ss));
+        Static.txt(("sum of annual turnover: " + ss), Attribute.NONE());
         return true;
     }
 

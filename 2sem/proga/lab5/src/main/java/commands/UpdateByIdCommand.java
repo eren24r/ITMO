@@ -7,8 +7,6 @@ import сlasses.Organization;
 import java.util.HashSet;
 import java.util.Scanner;
 
-import static com.diogonunes.jcolor.Ansi.colorize;
-
 public class UpdateByIdCommand implements Command {
 
     private String name = "update";
@@ -18,6 +16,13 @@ public class UpdateByIdCommand implements Command {
         Scanner scr = new Scanner(System.in);
         String[] xY = s.split(" ");
         boolean b = false;
+        boolean isPr = false;
+        if(Static.isPrint == 0){
+            isPr = true;
+            Static.isPrint = 1;
+        }else {
+            isPr = false;
+        }
         try {
             if (Integer.parseInt(xY[1]) >= 0 && xY[2].length() != 0) {
                 if(xY[2].indexOf('"') < 0){
@@ -28,14 +33,28 @@ public class UpdateByIdCommand implements Command {
                         }
                     }
                 }else{
-                    Static.txt(colorize("Ошибка формата!", Attribute.RED_TEXT()));
+                    Static.txt("Ошибка формата!", Attribute.RED_TEXT());
+                    if(isPr){
+                        Static.isPrint = 0;
+                    }
                 }
             }
             if(b == true){
-                Static.txt(colorize("Объект изменено!", Attribute.GREEN_TEXT(), Attribute.BOLD()));
+                if(isPr){
+                    Static.isPrint = 0;
+                }
+                Static.txt("Объект изменено!", Attribute.BOLD());
+            }
+            if(b==false){
+                if(isPr){
+                    Static.isPrint = 0;
+                }
             }
         } catch (Exception e) {
-            Static.txt(colorize("Ошибка формата!", Attribute.RED_TEXT()));
+            Static.txt("Ошибка формата!", Attribute.RED_TEXT());
+            if(isPr){
+                Static.isPrint = 0;
+            }
         }
         return b;
     }

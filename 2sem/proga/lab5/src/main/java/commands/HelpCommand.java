@@ -4,9 +4,7 @@ import com.diogonunes.jcolor.Attribute;
 import statics.Static;
 import сlasses.Organization;
 
-import java.util.*;
-
-import static com.diogonunes.jcolor.Ansi.colorize;
+import java.util.HashSet;
 
 public class HelpCommand implements Command{
 
@@ -24,7 +22,7 @@ public class HelpCommand implements Command{
             */
             alldes = alldes + c.des() + "\n";
         }
-        Static.txt((colorize(alldes, Attribute.GREEN_TEXT())));
+        Static.txt(alldes, Attribute.GREEN_TEXT());
         return true;
    }
 

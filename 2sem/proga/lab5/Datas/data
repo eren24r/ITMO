@@ -1,2 +1,6 @@
-id,name,coordinates.x,coordinates.y,creationDate,annualTurnover,type,postalAddressStreet,postalAddressZipCoder
-"0","hello","343","435.0","01.03.2023 16:22:40","34543.0","TRUST","eijfief","35345"
+{"id":4,"name":"man","coordinates":{"x":345,"y":435.0},"creationDate":"11.03.2023 17:42:00","annualTurnover":43534.0,"type":"TRUST","postalAddress":{"street":"erregr","zipCode":"ergreg"}}
+{"id":5,"name":"dnvkdv","coordinates":{"x":435,"y":43543.0},"creationDate":"11.03.2023 18:01:17","annualTurnover":5464.0,"type":"TRUST","postalAddress":{"street":"grugir","zipCode":"greg"}}
+{"id":6,"name":"man","coordinates":{"x":456,"y":54.0},"creationDate":"11.03.2023 18:04:11","annualTurnover":435.0,"type":"GOVERNMENT","postalAddress":{"street":"5435","zipCode":"345"}}
+{"id":7,"name":"sdf:DSf","coordinates":{"x":345,"y":345.0},"creationDate":"11.03.2023 18:28:24","annualTurnover":345.0,"type":"GOVERNMENT","postalAddress":{"street":"43543","zipCode":"4t4"}}
+{"id":8,"name":"hello","coordinates":{"x":435,"y":45.0},"creationDate":"11.03.2023 18:42:40","annualTurnover":435435.0,"type":"GOVERNMENT","postalAddress":{"street":"345","zipCode":"35"}}
+{"id":9,"name":"hello","coordinates":{"x":543,"y":543.0},"creationDate":"11.03.2023 18:43:42","annualTurnover":43.0,"type":"TRUST","postalAddress":{"street":"54","zipCode":"34"}}

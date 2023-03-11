@@ -3,7 +3,7 @@ package dataParseIng;
 import java.io.*;
 
 public class CsvJson {
-    public int getIsCsv(){
+    public static int getIsCsv(){
         int sz;
         BufferedReader reader = null;
         try {

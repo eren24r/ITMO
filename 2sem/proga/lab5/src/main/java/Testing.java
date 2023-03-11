@@ -13,7 +13,7 @@ public class Testing {
         System.out.println(s.size());
         HelpCommand hp = new HelpCommand();
         HashSet<Organization> e = null;
-        hp.doo(e, "fdd", 1, 1);
+        hp.doo(e, "fdd");
     }
     public static boolean doo(HashSet< String > mySet, String s, int isCsv, int isPrint) {
         mySet.clear();

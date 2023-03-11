@@ -10,14 +10,14 @@ public class AverageCommand implements Command{
     private String name = "average_of_annual_turnover";
 
     @Override
-    public boolean doo(HashSet<Organization> mySet, String s, int isCsv, int isPrint) {
+    public boolean doo(HashSet<Organization> mySet, String s) {
         double av = 0;
         if(mySet.size() > 0) {
             for(Organization o: mySet){
                 av = av + o.getAnnualTurnover();
             }
             av = av / mySet.size();
-            Static.txt(("average of annual turnover: " + av), isPrint);
+            Static.txt(("average of annual turnover: " + av));
             return true;
         }
         return false;

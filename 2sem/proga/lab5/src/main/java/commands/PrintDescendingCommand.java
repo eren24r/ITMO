@@ -11,13 +11,13 @@ public class PrintDescendingCommand implements Command {
     public String name = "print_descending";
 
     @Override
-    public boolean doo(HashSet<Organization> mySet, String s, int isCsv, int isPrint) {
+    public boolean doo(HashSet<Organization> mySet, String s) {
         HashMap<Integer, Organization> al = srCmd.sort(mySet);
         String ss = "";
         for(Organization o: al.values()){
             ss = o.getName() + "\n" + ss;
         }
-        Static.txt(s,1);
+        Static.txt(ss);
         return true;
     }
 

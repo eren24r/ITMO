@@ -9,12 +9,12 @@ public class SumCommand implements Command{
     private String name = "sum_of_annual_turnover";
 
     @Override
-    public boolean doo(HashSet<Organization> mySet, String s, int isCsv, int isPrint) {
+    public boolean doo(HashSet<Organization> mySet, String s) {
         double ss = 0;
         for(Organization o: mySet){
             ss = ss + o.getAnnualTurnover();
         }
-        Static.txt(("sum of annual turnover: " + ss), isPrint);
+        Static.txt(("sum of annual turnover: " + ss));
         return true;
     }
 

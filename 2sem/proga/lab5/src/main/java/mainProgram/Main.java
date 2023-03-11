@@ -39,48 +39,43 @@ public class Main {
             }
         }*/
         Static.fileName = ("Datas/" + args[0]);
-        int isCsv = csvJson.getIsCsv();
         String outputFileName = Static.fileName;
         boolean isScript = false;
 
-        if(isCsv == 1) {
+        if(Static.isCsv == 1) {
             try {
                 mySet = parseCol.getOrganizationFromCsv();
-                System.out.println("Готова!");
+                Static.txt("Готова!");
             } catch (FileNotFoundException e) {
-                System.out.println(colorize(("Ошибка в файле или неправильный путь!"), Attribute.RED_TEXT()));
+                Static.txt(colorize(("Ошибка в файле или неправильный путь!"), Attribute.RED_TEXT()));
             }
-        }else if(isCsv == 0){
+        }else if(Static.isCsv == 0){
             try {
                 mySet = parseCol.getOrganizationFromJson();
-                System.out.println("Готова!");
+                Static.txt("Готова!");
             } catch (FileNotFoundException e) {
-                System.out.println(colorize(("Ошибка в файле или неправильный путь!"), Attribute.RED_TEXT()));
+                Static.txt(colorize(("Ошибка в файле или неправильный путь!"), Attribute.RED_TEXT()));
             }
         }
-        Static.nl();
         System.out.print(colorize("> ", Attribute.BOLD(), Attribute.BLUE_TEXT()));
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             try (BufferedWriter writter = new BufferedWriter(new FileWriter(outputFileName, true))) {
                 String line;
                 while (!(line = reader.readLine()).equals("exit")) {
-                    /*cmd.commandsEditor(mySet, line, isCsv);*/
+                    cmd.commandsEditor(mySet, line);
                     if (line.equals("save")){
-                        /*svCmd.save(mySet, isCsv);*/
-                        if(isCsv == 1) {
+                        if(Static.isCsv == 1) {
                             mySet = parseCol.getOrganizationFromCsv();
                         }
-                        if(isCsv == 0){
+                        if(Static.isCsv == 0){
                             mySet = parseCol.getOrganizationFromJson();
                         }
-                        Static.nl();
                     }
-                    if(!isScript && line.contains("execute_script")){
+                    /*if(!isScript && line.contains("execute_script")){
                         exSrCmd.execute_script(mySet, line, isCsv);
                         Static.nl();
-                    }
-
+                    }*/
                     System.out.print(colorize("> ", Attribute.BOLD(), Attribute.BLUE_TEXT()));
                 }
             }

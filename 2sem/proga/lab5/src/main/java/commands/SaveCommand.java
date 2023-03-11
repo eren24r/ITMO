@@ -20,23 +20,23 @@ public class SaveCommand implements Command{
     private String name = "save";
 
     @Override
-    public boolean doo(HashSet<Organization> mySet, String s, int isCsv, int isPrint) {
-        if(isCsv == 1) {
+    public boolean doo(HashSet<Organization> mySet, String s) {
+        if(Static.isCsv == 1) {
             dt.dataEraserCsv(Static.fileName);
             HashMap<Integer, Organization> al = sr.sort(mySet);
             for (Organization o : al.values()) {
                 csvWr.csvWriter(o.toStringCSV(), Static.fileName);
             }
-            Static.txt(colorize("Коллекция успешно сохранено!", Attribute.GREEN_TEXT(), Attribute.BOLD()), 1);
+            Static.txt(colorize("Коллекция успешно сохранено!", Attribute.GREEN_TEXT(), Attribute.BOLD()));
             return true;
         }
-        if(isCsv == 0) {
+        if(Static.isCsv == 0) {
             dt.dataEraserJson(Static.fileName);
             HashMap<Integer, Organization> al = sr.sort(mySet);
             for (Organization o : al.values()) {
                 jsnWr.jsonWriter(o.toStringJson(), Static.fileName);
             }
-            Static.txt(colorize("Коллекция успешно сохранено!", Attribute.GREEN_TEXT(), Attribute.BOLD()), 1);
+            Static.txt(colorize("Коллекция успешно сохранено!", Attribute.GREEN_TEXT(), Attribute.BOLD()));
             return true;
         }else {
             return false;

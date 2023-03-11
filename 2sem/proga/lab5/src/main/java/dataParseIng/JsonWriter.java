@@ -1,5 +1,7 @@
 package dataParseIng;
 
+import statics.Static;
+
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -10,7 +12,7 @@ public class JsonWriter{
         try (BufferedWriter writter = new BufferedWriter(new FileWriter(fileName, true))) {
             writter.write(s + "\n");
         } catch (IOException e) {
-            System.out.println("Ошибка в файле или неправильный путь!");
+            Static.txt("Ошибка в файле или неправильный путь!");
             return false;
         }
         return true;

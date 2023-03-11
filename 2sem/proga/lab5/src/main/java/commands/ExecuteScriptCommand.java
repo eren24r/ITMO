@@ -12,12 +12,14 @@ import java.util.HashSet;
 
 import static com.diogonunes.jcolor.Ansi.colorize;
 
-public class ExecuteScriptCommand {
-    ParseIng pr = new ParseIng();
-    SaveCommand svCm = new SaveCommand();
+public class ExecuteScriptCommand implements Command {
+
+    private String name = "execute_script";
+    ParseIng parseCol = new ParseIng();
     Commands cmd = new Commands();
 
-    public boolean execute_script(HashSet<Organization> mySet, String s, int isCsv){
+    @Override
+    public boolean doo(HashSet<Organization> mySet, String s) {
         String[] xY = s.split(" ");
         boolean b = false;
         boolean isScript = true;
@@ -26,24 +28,38 @@ public class ExecuteScriptCommand {
                 try (BufferedReader reader = new BufferedReader(new FileReader(("Scripts/" + xY[1])))) {
                     String line;
                     while ((line = reader.readLine()) != null) {
-                        /*cmd.commandsEditor(mySet, line, isCsv);*/
+                        cmd.commandsEditor(mySet, line);
                         if (line.equals("save")){
-                            /*svCm.save(mySet, isCsv);*/
-                            mySet = pr.getOrganizationFromCsv();
-                            Static.nl();
+                            if(Static.isCsv == 1) {
+                                mySet = parseCol.getOrganizationFromCsv();
+                            }
+                            if(Static.isCsv == 0){
+                                mySet = parseCol.getOrganizationFromJson();
+                            }
                         }
                     }
+                    b = true;
                 } catch (IOException e) {
-                    Static.txt(colorize("Ошибка в файле или неправильный путь!", Attribute.RED_TEXT()),1);
+                    Static.txt(colorize("Ошибка в файле или неправильный путь!", Attribute.RED_TEXT()));
                     b = false;
-                    return b;
                 }
+                return b;
             }
         } catch (Exception e) {
-            Static.txt(colorize("Ошибка формата!", Attribute.RED_TEXT()),1);
+            Static.txt(colorize("Ошибка формата!", Attribute.RED_TEXT()));
             b = false;
             return b;
         }
         return b;
+    }
+
+    @Override
+    public String des() {
+        return "execute_script file_name : считать и исполнить скрипт из указанного файла";
+    }
+
+    @Override
+    public String getName() {
+        return this.name;
     }
 }

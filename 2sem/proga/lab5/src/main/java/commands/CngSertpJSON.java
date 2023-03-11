@@ -2,6 +2,7 @@ package commands;
 
 import dataParseIng.CsvJson;
 import dataParseIng.ParseIng;
+import statics.Static;
 import сlasses.Organization;
 
 import java.io.IOException;
@@ -12,16 +13,16 @@ public class CngSertpJSON implements Command{
     private String name = "change_serialization_type_JSON";
 
     @Override
-    public boolean doo(HashSet<Organization> mySet, String s, int isCsv, int isPrint) {
-        if(isCsv != 0){
-            isCsv = 0;
+    public boolean doo(HashSet<Organization> mySet, String s) {
+        if(Static.isCsv != 0){
+            Static.isCsv = 0;
             ParseIng parseCol = new ParseIng();
             SaveCommand svCmd = new SaveCommand();
             try {
                 HashSet<Organization> tmp = parseCol.getOrganizationFromCsv();
-                svCmd.doo(tmp, s, isCsv, isPrint);
+                svCmd.doo(tmp, s);
                 CsvJson csvJson = new CsvJson();
-                csvJson.saveIsCsv(isCsv);
+                csvJson.saveIsCsv(Static.isCsv);
                 return true;
             } catch (IOException e) {
                 throw new RuntimeException(e);

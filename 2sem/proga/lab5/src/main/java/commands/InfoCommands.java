@@ -17,17 +17,17 @@ public class InfoCommands implements Command{
     }
 
     @Override
-    public boolean doo(HashSet<Organization> set, String s, int isCsv, int isPrint) {
-        Static.txt("Класс:    Organization", isPrint);
-        Static.txt("id - identification number", isPrint);
-        Static.txt("name - Название Огранизации", isPrint);
-        Static.txt("coordinates - кординаты огранизации", isPrint);
-        Static.txt("creationDate - дата создания", isPrint);
-        Static.txt("annualTurnover - годовой оборот", isPrint);
-        Static.txt("type - тип организации", isPrint);
-        Static.txt("postalAddress - адрес", isPrint);
+    public boolean doo(HashSet<Organization> set, String s) {
+        Static.txt("Класс:    Organization");
+        Static.txt("id - identification number");
+        Static.txt("name - Название Огранизации");
+        Static.txt("coordinates - кординаты огранизации");
+        Static.txt("creationDate - дата создания");
+        Static.txt("annualTurnover - годовой оборот");
+        Static.txt("type - тип организации");
+        Static.txt("postalAddress - адрес");
 
-        Static.txt(colorize("Количество элементов Колекции: " + set.size(), Attribute.GREEN_TEXT()), isPrint);
+        Static.txt(colorize("Количество элементов Колекции: " + set.size(), Attribute.GREEN_TEXT()));
         return true;
     }
 

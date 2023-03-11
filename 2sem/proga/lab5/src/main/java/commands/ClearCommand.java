@@ -7,7 +7,7 @@ import java.util.HashSet;
 public class ClearCommand implements Command{
     private String name = "clear";
     @Override
-    public boolean doo(HashSet<Organization> mySet, String s, int isCsv, int isPrint) {
+    public boolean doo(HashSet<Organization> mySet, String s) {
         mySet.clear();
         return true;
     }

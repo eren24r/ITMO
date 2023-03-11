@@ -14,7 +14,7 @@ public class UpdateByIdCommand implements Command {
     private String name = "update";
 
     @Override
-    public boolean doo(HashSet<Organization> mySet, String s, int isCsv, int isPrint) {
+    public boolean doo(HashSet<Organization> mySet, String s) {
         Scanner scr = new Scanner(System.in);
         String[] xY = s.split(" ");
         boolean b = false;
@@ -28,14 +28,14 @@ public class UpdateByIdCommand implements Command {
                         }
                     }
                 }else{
-                    Static.txt(colorize("Ошибка формата!", Attribute.RED_TEXT()), isPrint);
+                    Static.txt(colorize("Ошибка формата!", Attribute.RED_TEXT()));
                 }
             }
             if(b == true){
-                Static.txt(colorize("Объект изменено!", Attribute.GREEN_TEXT(), Attribute.BOLD()), isPrint);
+                Static.txt(colorize("Объект изменено!", Attribute.GREEN_TEXT(), Attribute.BOLD()));
             }
         } catch (Exception e) {
-            Static.txt(colorize("Ошибка формата!", Attribute.RED_TEXT()), isPrint);
+            Static.txt(colorize("Ошибка формата!", Attribute.RED_TEXT()));
         }
         return b;
     }

@@ -5,7 +5,7 @@ import сlasses.Organization;
 import java.util.HashSet;
 
 public interface Command {
-    boolean doo(HashSet<Organization> mySet, String s, int isCsv, int isPrint);
+    boolean doo(HashSet<Organization> mySet, String s);
     String des();
     String getName();
 }

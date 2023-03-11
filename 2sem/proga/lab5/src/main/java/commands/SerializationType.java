@@ -8,20 +8,23 @@ import java.util.HashSet;
 
 import static com.diogonunes.jcolor.Ansi.colorize;
 
-public class ShowInfoCommand implements Command{
-    private String name = "show";
+public class SerializationType implements Command{
 
+    private String name = "Serialization_type";
     @Override
     public boolean doo(HashSet<Organization> mySet, String s) {
-        for(Organization o: mySet){
-            Static.txt(colorize(o.toString(), Attribute.BLUE_TEXT()));
+        if(Static.isCsv == 1){
+            Static.txt(colorize("CSV", Attribute.GREEN_TEXT(), Attribute.BOLD()));
+        }
+        if(Static.isCsv == 0){
+            Static.txt(colorize("JSON", Attribute.GREEN_TEXT(), Attribute.BOLD()));
         }
         return true;
     }
 
     @Override
     public String des() {
-        return "show : все элементы коллекции в строковом представлении";
+        return "Serialization_type: Current Serialization_type";
     }
 
     @Override

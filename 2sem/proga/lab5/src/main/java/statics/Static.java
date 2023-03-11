@@ -1,6 +1,7 @@
 package statics;
 
 import commands.*;
+import dataParseIng.CsvJson;
 import сlasses.OrganizationType;
 
 import java.time.format.DateTimeFormatter;
@@ -10,6 +11,9 @@ public class Static {
     public static OrganizationType orTp = OrganizationType.PUBLIC;
     public static DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss");
     public static String fileName = "Datas/";
+    public static int isPrint = 1;
+    public static CsvJson csvJson;
+    public static int isCsv = csvJson.getIsCsv();
 
     public static Map<String, Command> listOfCommand;
 
@@ -29,10 +33,12 @@ public class Static {
         listOfCommand.put(new RemoveByIdCommand().getName(), new RemoveByIdCommand());
         listOfCommand.put(new UpdateByIdCommand().getName(), new UpdateByIdCommand());
         listOfCommand.put(new OrganizationAddCommand().getName(), new OrganizationAddCommand());
+        listOfCommand.put(new SerializationType().getName(), new SerializationType());
+        listOfCommand.put(new ExecuteScriptCommand().getName(), new ExecuteScriptCommand());
     }
 
 
-    public static void txt(String s, int isPrint){
+    public static void txt(String s){
         System.out.println(s);
     }
 

@@ -13,7 +13,7 @@ public class RemoveByIdCommand implements Command{
     private String name = "remove_by_id";
 
     @Override
-    public boolean doo(HashSet<Organization> mySet, String s, int isCsv, int isPrint) {
+    public boolean doo(HashSet<Organization> mySet, String s) {
         String[] xY = s.split(" ");
         Object bb = null;
         boolean b = false;
@@ -29,10 +29,10 @@ public class RemoveByIdCommand implements Command{
             }
             if(b == true){
                 mySet.remove(bb);
-                Static.txt(colorize("Объект удалено!", Attribute.GREEN_TEXT(), Attribute.BOLD()), isPrint);
+                Static.txt(colorize("Объект удалено!", Attribute.GREEN_TEXT(), Attribute.BOLD()));
             }
         } catch (Exception e) {
-            Static.txt(colorize("Ошибка формата!", Attribute.RED_TEXT()), isPrint);
+            Static.txt(colorize("Ошибка формата!", Attribute.RED_TEXT()));
         }
         return b;
     }

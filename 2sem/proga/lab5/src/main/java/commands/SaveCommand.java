@@ -12,32 +12,44 @@ import java.util.HashSet;
 
 import static com.diogonunes.jcolor.Ansi.colorize;
 
-public class SaveCommand {
+public class SaveCommand implements Command{
     DataParse dt = new DataParse();
     CsvWriter csvWr = new CsvWriter();
     JsonWriter jsnWr = new JsonWriter();
     Sort sr = new Sort();
+    private String name = "save";
 
-    public boolean save(HashSet<Organization> set, int isCsv){
+    @Override
+    public boolean doo(HashSet<Organization> mySet, String s, int isCsv, int isPrint) {
         if(isCsv == 1) {
             dt.dataEraserCsv(Static.fileName);
-            HashMap<Integer, Organization> al = sr.sort(set);
+            HashMap<Integer, Organization> al = sr.sort(mySet);
             for (Organization o : al.values()) {
                 csvWr.csvWriter(o.toStringCSV(), Static.fileName);
             }
-            Static.txt(colorize("Коллекция успешно сохранено!", Attribute.GREEN_TEXT(), Attribute.BOLD()));
+            Static.txt(colorize("Коллекция успешно сохранено!", Attribute.GREEN_TEXT(), Attribute.BOLD()), 1);
             return true;
         }
         if(isCsv == 0) {
             dt.dataEraserJson(Static.fileName);
-            HashMap<Integer, Organization> al = sr.sort(set);
+            HashMap<Integer, Organization> al = sr.sort(mySet);
             for (Organization o : al.values()) {
                 jsnWr.jsonWriter(o.toStringJson(), Static.fileName);
             }
-            Static.txt(colorize("Коллекция успешно сохранено!", Attribute.GREEN_TEXT(), Attribute.BOLD()));
+            Static.txt(colorize("Коллекция успешно сохранено!", Attribute.GREEN_TEXT(), Attribute.BOLD()), 1);
             return true;
         }else {
             return false;
         }
+    }
+
+    @Override
+    public String des() {
+        return "save : сохранить коллекцию в файл";
+    }
+
+    @Override
+    public String getName() {
+        return this.name;
     }
 }

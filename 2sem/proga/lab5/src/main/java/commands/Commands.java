@@ -1,18 +1,12 @@
 package commands;
 
-import statics.Static;
-import сlasses.Organization;
-
-import java.io.IOException;
-import java.util.HashSet;
-
 /**
  * Команды
  */
 
 
 public class Commands {
-
+/*
     HelpCommand hpCmd = new HelpCommand();
     InfoCommands inCmd = new InfoCommands();
     OrganizationAddCommand orAddCmd = new OrganizationAddCommand();
@@ -73,4 +67,5 @@ public class Commands {
         }
         return true;
     }
+    */
 }

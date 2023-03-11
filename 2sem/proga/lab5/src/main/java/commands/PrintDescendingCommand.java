@@ -6,16 +6,28 @@ import сlasses.Organization;
 import java.util.HashMap;
 import java.util.HashSet;
 
-public class PrintDescendingCommand {
+public class PrintDescendingCommand implements Command {
     Sort srCmd = new Sort();
+    public String name = "print_descending";
 
-    public boolean print_descending(HashSet<Organization> set){
-        HashMap<Integer, Organization> al = srCmd.sort(set);
-        String s = "";
+    @Override
+    public boolean doo(HashSet<Organization> mySet, String s, int isCsv, int isPrint) {
+        HashMap<Integer, Organization> al = srCmd.sort(mySet);
+        String ss = "";
         for(Organization o: al.values()){
-            s = o.getName() + "\n" + s;
+            ss = o.getName() + "\n" + ss;
         }
-        Static.txt(s);
+        Static.txt(s,1);
         return true;
+    }
+
+    @Override
+    public String des() {
+        return "print_descending : вывести элементы коллекции в порядке убывания";
+    }
+
+    @Override
+    public String getName() {
+        return this.name;
     }
 }

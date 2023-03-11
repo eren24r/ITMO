@@ -1,9 +1,7 @@
 package mainProgram;
 
 import com.diogonunes.jcolor.Attribute;
-import commands.Commands;
-import commands.ExecuteScriptCommand;
-import commands.SaveCommand;
+import commands.*;
 import dataParseIng.CsvJson;
 import dataParseIng.ParseIng;
 import statics.Static;
@@ -11,6 +9,8 @@ import сlasses.Organization;
 
 import java.io.*;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 import static com.diogonunes.jcolor.Ansi.colorize;
 
@@ -19,6 +19,9 @@ import static com.diogonunes.jcolor.Ansi.colorize;
  */
 public class Main {
     public static void main(String[] args) throws IOException {
+        Map<String, Command> listCommand = new LinkedHashMap<String, Command>();
+        listCommand.put(new InfoCommands().getName(), new InfoCommands());
+
         HashSet<Organization> mySet = new HashSet<>();
         ParseIng parseCol = new ParseIng();
         Commands cmd = new Commands();
@@ -62,9 +65,9 @@ public class Main {
             try (BufferedWriter writter = new BufferedWriter(new FileWriter(outputFileName, true))) {
                 String line;
                 while (!(line = reader.readLine()).equals("exit")) {
-                    cmd.commandsEditor(mySet, line, isCsv);
+                    /*cmd.commandsEditor(mySet, line, isCsv);*/
                     if (line.equals("save")){
-                        svCmd.save(mySet, isCsv);
+                        /*svCmd.save(mySet, isCsv);*/
                         if(isCsv == 1) {
                             mySet = parseCol.getOrganizationFromCsv();
                         }
@@ -77,18 +80,7 @@ public class Main {
                         exSrCmd.execute_script(mySet, line, isCsv);
                         Static.nl();
                     }
-                    if(isCsv != 0 && line.equals("change_serialization_type JSON")){
-                        isCsv = 0;
-                        HashSet<Organization> tmp = parseCol.getOrganizationFromCsv();
-                        svCmd.save(tmp, isCsv);
-                        csvJson.saveIsCsv(isCsv);
-                    }
-                    if(isCsv != 1 && line.equals("change_serialization_type CSV")){
-                        isCsv = 1;
-                        HashSet<Organization> tmp = parseCol.getOrganizationFromJson();
-                        svCmd.save(tmp, isCsv);
-                        csvJson.saveIsCsv(isCsv);
-                    }
+
                     System.out.print(colorize("> ", Attribute.BOLD(), Attribute.BLUE_TEXT()));
                 }
             }

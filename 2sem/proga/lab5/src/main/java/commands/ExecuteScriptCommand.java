@@ -26,21 +26,21 @@ public class ExecuteScriptCommand {
                 try (BufferedReader reader = new BufferedReader(new FileReader(("Scripts/" + xY[1])))) {
                     String line;
                     while ((line = reader.readLine()) != null) {
-                        cmd.commandsEditor(mySet, line, isCsv);
+                        /*cmd.commandsEditor(mySet, line, isCsv);*/
                         if (line.equals("save")){
-                            svCm.save(mySet, isCsv);
+                            /*svCm.save(mySet, isCsv);*/
                             mySet = pr.getOrganizationFromCsv();
                             Static.nl();
                         }
                     }
                 } catch (IOException e) {
-                    Static.txt(colorize("Ошибка в файле или неправильный путь!", Attribute.RED_TEXT()));
+                    Static.txt(colorize("Ошибка в файле или неправильный путь!", Attribute.RED_TEXT()),1);
                     b = false;
                     return b;
                 }
             }
         } catch (Exception e) {
-            Static.txt(colorize("Ошибка формата!", Attribute.RED_TEXT()));
+            Static.txt(colorize("Ошибка формата!", Attribute.RED_TEXT()),1);
             b = false;
             return b;
         }

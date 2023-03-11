@@ -1,22 +1,30 @@
 package commands;
 
+import statics.Static;
 import сlasses.Organization;
 
 import java.util.HashSet;
 
-public class SumCommand {
-    public Float sum_of_annual_turnover(HashSet<Organization> set){
-        Float s = 0F;
-        for(Organization o: set){
-            s = s + o.getAnnualTurnover();
+public class SumCommand implements Command{
+    private String name = "sum_of_annual_turnover";
+
+    @Override
+    public boolean doo(HashSet<Organization> mySet, String s, int isCsv, int isPrint) {
+        double ss = 0;
+        for(Organization o: mySet){
+            ss = ss + o.getAnnualTurnover();
         }
-        return s;
+        Static.txt(("sum of annual turnover: " + ss), isPrint);
+        return true;
     }
 
-    public Float average_of_annual_turnover(HashSet<Organization> set){
-        if(set.size() > 0) {
-            return this.sum_of_annual_turnover(set) / set.size();
-        }
-        return null;
+    @Override
+    public String des() {
+        return "sum_of_annual_turnover : сумма значений поля annualTurnover для всех элементов коллекции";
+    }
+
+    @Override
+    public String getName() {
+        return this.name;
     }
 }

@@ -92,15 +92,6 @@ public class Main {
             e.printStackTrace();
         }
 
-        /*Organization s = new Organization("s", new Coordinates(14L,1), 45F, OrganizationType.PUBLIC, new Address("Lomo", "5858"));
-        ParseIng.csvWriter(s.toStringCSV());
-        Organization a = new Organization("a", new Coordinates(45L, 23), 4657F, OrganizationType.TRUST, new Address("Kron", "35435435"));
-        ParseIng.csvWriter(a.toStringCSV());*/
-
-        /*for (Organization o : mySet) {
-            System.out.println(o.toStringCSV());
-        }*/
-
     }
 
 }

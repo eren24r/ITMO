@@ -1,6 +1,5 @@
-package commands;
+package collEdit;
 
-import collEdit.GetSizeOfCollection;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import statics.Static;
@@ -9,10 +8,11 @@ import сlasses.Coordinates;
 import сlasses.Organization;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.HashSet;
+
 class GetSizeOfCollectionTest {
-     public HashSet<Organization> s = new HashSet<>();
-     GetSizeOfCollection szCol = new GetSizeOfCollection();
+    public HashSet<Organization> s = new HashSet<>();
+    GetSizeOfCollection szCol = new GetSizeOfCollection();
 
     @Test
     void getSizeofSet() {

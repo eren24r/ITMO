@@ -15,11 +15,12 @@ public class Commands {
 
     public boolean commandsEditor(HashSet<Organization> mySet, String line) throws IOException {
         String[] cmdStr = line.split(" ");
-        for(Command c: Static.listOfCommand.values()){
+        Static.listOfCommand.get(line).doo(mySet, line);
+        /*for(Command c: Static.listOfCommand.values()){
             if(c.getName().toString().equals(cmdStr[0])){
                 c.doo(mySet, line);
             }
-        }
+        }*/
         Static.listOfCommand.putAll(Static.listOfNewCommand);
         Static.listOfNewCommand.clear();
         return true;

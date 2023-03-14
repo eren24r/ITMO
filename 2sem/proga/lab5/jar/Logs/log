@@ -1,0 +1,47 @@
+
+14.03.2023 12:01:58
+
+
+14.03.2023 12:02:31
+
+
+14.03.2023 12:03:33
+
+help : справка по доступным командам
+info : информация о коллекции
+show : все элементы коллекции в строковом представлении
+clear : очистить коллекцию
+save : сохранить коллекцию в файл
+sum_of_annual_turnover : сумма значений поля annualTurnover для всех элементов коллекции
+average_of_annual_turnover : среднее значение поля annualTurnover для всех элементов коллекции
+print_descending : вывести элементы коллекции в порядке убывания
+change_serialization_type_JSON - Convert Serialization Type to Json
+change_serialization_type_CSV - Convert Serialization Type to CSV
+remove_by_id id: удалить элемент из коллекции по его id
+update id new_element : обновить значение элемента коллекции
+add element_name : добавить новый элемент в коллекцию
+Serialization_type: Current Serialization_type
+execute_script file_name : считать и исполнить скрипт из указанного файла
+add_command name: добавить команду
+print_logic_type - тип вывода!
+change_print_logic_console - печатаеть вывод в консол
+change_print_logic_file - записивать вывод в log файл
+hello: simple command
+hiname: simple command
+hihello: simple command
+man: simple command
+
+hello
+kill
+element_name
+element_name
+man
+man
+element_name
+element_name
+element_name
+element_name
+hello
+element_name
+element_name
+Changed!

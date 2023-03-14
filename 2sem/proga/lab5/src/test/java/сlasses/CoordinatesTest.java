@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CoordinatesTest {
-
     @Test
     void testToString() {
         Coordinates cr = new Coordinates(7675L, -657);

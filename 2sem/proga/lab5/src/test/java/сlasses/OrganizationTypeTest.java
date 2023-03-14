@@ -27,4 +27,5 @@ class OrganizationTypeTest {
         assertEquals(OrganizationType.PUBLIC, Static.orTp.getTypeByName("PUBLIC"));
         assertEquals(OrganizationType.TRUST, Static.orTp.getTypeByName("TRUST"));
     }
+
 }

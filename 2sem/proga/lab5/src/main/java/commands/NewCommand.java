@@ -21,7 +21,7 @@ public class NewCommand implements Command{
 
     @Override
     public String des() {
-        return (this.name + ": simple command");
+        return (this.name + " : simple command");
     }
 
     @Override

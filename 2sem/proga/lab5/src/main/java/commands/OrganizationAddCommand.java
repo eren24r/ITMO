@@ -5,6 +5,7 @@ import statics.Static;
 import сlasses.Address;
 import сlasses.Coordinates;
 import сlasses.Organization;
+import сlasses.OrganizationType;
 
 import java.io.IOException;
 import java.util.HashSet;
@@ -21,25 +22,25 @@ public class OrganizationAddCommand implements Command {
         Float annualTurnover = 0F;
         String street = "", zipCode = "";
         boolean isPr = false;
-        if(Static.isPrint == 0){
+        if (Static.isPrint == 0) {
             isPr = true;
             Static.isPrint = 1;
-        }else {
+        } else {
             isPr = false;
         }
 
         Scanner snr = new Scanner(System.in);
         String[] dt = s.split(" ");
-        if(dt.length > 1) {
+        if (dt.length == 2) {
             nm = dt[1];
-            if(nm.indexOf('\"') < 0){
+            if (nm.indexOf('\"') < 0) {
                 Static.txt("Создание объекта " + dt[1], Attribute.BOLD());
-            }else {
+            } else {
                 boolean isNm = false;
                 Static.txt("Founded \". Try without \".", Attribute.RED_TEXT());
                 while (!isNm) {
                     String xY = snr.nextLine();
-                    if(xY.indexOf('"') < 0){
+                    if (xY.indexOf('"') < 0) {
                         isNm = true;
                         nm = xY;
                         Static.txt("Создание объекта " + nm, Attribute.BOLD());
@@ -54,7 +55,7 @@ public class OrganizationAddCommand implements Command {
                     if (Long.parseLong(xY[0]) >= (-811) && Float.parseFloat(xY[1]) != Math.E) {
                         crX = Long.parseLong(xY[0]);
                         crY = Float.parseFloat(xY[1]);
-                        Static.txt("Кординаты добавлены!",  Attribute.BOLD());
+                        Static.txt("Кординаты добавлены!", Attribute.BOLD());
                     } else {
                         Static.txt("Кордината X должно быть больше -811", Attribute.RED_TEXT());
                     }
@@ -101,7 +102,7 @@ public class OrganizationAddCommand implements Command {
 
             //Street
             while (street.length() == 0) {
-                Static.txt("Адрес. Название улицы: ",Attribute.BOLD());
+                Static.txt("Адрес. Название улицы: ", Attribute.BOLD());
                 String strna = snr.nextLine();
                 if (strna.length() != 0 && strna.length() <= 67 && strna.indexOf("\"") < 0) {
                     street = strna;
@@ -112,12 +113,12 @@ public class OrganizationAddCommand implements Command {
             }
             //zipCode
 
-            while (zipCode.length() == 0){
+            while (zipCode.length() == 0) {
                 Static.txt("Zip-Code: ", Attribute.BOLD());
                 String zp = snr.nextLine();
                 if (zp.length() != 0 && zp.indexOf("\"") < 0) {
                     zipCode = zp;
-                    Static.txt("Zip-Code добавлен!",Attribute.BOLD());
+                    Static.txt("Zip-Code добавлен!", Attribute.BOLD());
                 } else {
                     Static.txt("Founded \". Try without \".", Attribute.RED_TEXT());
                 }
@@ -127,7 +128,7 @@ public class OrganizationAddCommand implements Command {
             try {
                 tmpOr = new Organization(nm, new Coordinates(crX, crY), annualTurnover, Static.orTp.getTypeById(tp), new Address(street, zipCode));
                 mySet.add(tmpOr);
-                if(isPr){
+                if (isPr) {
                     Static.isPrint = 0;
                 }
                 Static.txt("Организация " + nm + " добавлена!", Attribute.BOLD());
@@ -135,9 +136,30 @@ public class OrganizationAddCommand implements Command {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-        }else{
+        } else if (dt.length == 8) {
+            String nameNew = dt[1];
+            Coordinates cr = new Coordinates(Long.parseLong(dt[2]), Float.parseFloat(dt[3]));
+            /*OrganizationType o_type = ortp.getTypeById(Integer.parseInt(dt.get(6)));*/
+            Float anT = Float.parseFloat(dt[4]);
+            OrganizationType ortp = OrganizationType.PUBLIC;
+            OrganizationType o_type = ortp.getTypeByName(dt[5].toUpperCase());
+            Address ad = new Address(dt[6], dt[7]);
+            Organization data = null;
+            try {
+                data = new Organization(nameNew, cr, anT, o_type, ad);
+                mySet.add(data);
+                if (isPr) {
+                    Static.isPrint = 0;
+                }
+                Static.txt("Организация " + nameNew + " добавлена!", Attribute.BOLD());
+                return true;
+            } catch (IOException e) {
+                Static.txt("Данные Организации Некорректно!", Attribute.RED_TEXT());
+                return false;
+            }
+        } else {
             Static.txt("Название Организации Некорректно!", Attribute.RED_TEXT());
-            if(isPr){
+            if (isPr) {
                 Static.isPrint = 0;
             }
             return false;

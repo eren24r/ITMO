@@ -81,10 +81,7 @@ public class Main {
                             mySet = parseCol.getOrganizationFromJson();
                         }
                     }
-                    /*if(!isScript && line.contains("execute_script")){
-                        exSrCmd.execute_script(mySet, line, isCsv);
-                        Static.nl();
-                    }*/
+
                     System.out.print(colorize("> ", Attribute.BOLD(), Attribute.BLUE_TEXT()));
                 }
             }

@@ -17,7 +17,7 @@ public class ChgLogToConsole implements Command{
 
     @Override
     public String des() {
-        return "change_print_logic_console - печатаеть вывод в консол";
+        return "change_print_logic_console : печатаеть вывод в консол";
     }
 
     @Override

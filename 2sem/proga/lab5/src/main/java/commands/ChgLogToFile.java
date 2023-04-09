@@ -17,7 +17,7 @@ public class ChgLogToFile implements Command{
 
     @Override
     public String des() {
-        return "change_print_logic_file - записивать вывод в log файл";
+        return "change_print_logic_file : записивать вывод в log файл";
     }
 
     @Override

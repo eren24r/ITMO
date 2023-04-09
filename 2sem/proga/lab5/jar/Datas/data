@@ -9,6 +9,7 @@ id,name,coordinates.x,coordinates.y,creationDate,annualTurnover,type,postalAddre
 "16","element_name","45","46.0","11.03.2023 22:33:43","435.0","GOVERNMENT","tyt","rt"
 "17","element_name","345","4.0","11.03.2023 22:34:28","43534.0","GOVERNMENT","435","fdg"
 "18","element_name","345","54.0","11.03.2023 22:37:55","345.0","GOVERNMENT","4ghg","345"
-"19","element_name","435","345.0","11.03.2023 22:38:47","345.0","PUBLIC","gfd","3453"
 "20","element_name","435","46.0","11.03.2023 22:39:17","6456.0","GOVERNMENT","rt","435"
 "22","element_name","35","43.0","14.03.2023 12:06:48","435435.0","GOVERNMENT","343","dgfdg"
+"23","element_name","423","234.0","15.03.2023 14:38:41","24234.0","GOVERNMENT","46fdg","45tr"
+"25","newwithotadding","345","435.0","15.03.2023 15:10:48","43634.0","PUBLIC","mfsd","ewfewf"

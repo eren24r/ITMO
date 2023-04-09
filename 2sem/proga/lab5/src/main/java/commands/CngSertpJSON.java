@@ -34,7 +34,7 @@ public class CngSertpJSON implements Command{
 
     @Override
     public String des() {
-        return "change_serialization_type_JSON - Convert Serialization Type to Json";
+        return "change_serialization_type_JSON : Convert Serialization Type to Json";
     }
 
     @Override

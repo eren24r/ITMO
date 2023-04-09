@@ -12,7 +12,7 @@ public class ShowInfoCommand implements Command{
     @Override
     public boolean doo(HashSet<Organization> mySet, String s) {
         for(Organization o: mySet){
-            Static.txt(o.toString(), Attribute.BLUE_TEXT());
+            Static.txt(o.toStringJson(), Attribute.BLUE_TEXT());
         }
         return true;
     }

@@ -1,7 +1,8 @@
 help
+execute_script sc1
 info
 show
-add element_name
+add newwithotadding 345 435 43634 PUBLIC mfsd ewfewf
 update 7 34
 remove_by_id 6
 sum_of_annual_turnover

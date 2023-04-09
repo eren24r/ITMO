@@ -33,7 +33,7 @@ public class CngSertpCSV implements Command{
 
     @Override
     public String des() {
-        return "change_serialization_type_CSV - Convert Serialization Type to CSV";
+        return "change_serialization_type_CSV : Convert Serialization Type to CSV";
     }
 
     @Override

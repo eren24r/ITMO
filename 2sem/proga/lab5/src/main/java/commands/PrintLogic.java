@@ -20,7 +20,7 @@ public class PrintLogic implements Command{
 
     @Override
     public String des() {
-        return "print_logic_type - тип вывода!";
+        return "print_logic_type: тип вывода!";
     }
 
     @Override

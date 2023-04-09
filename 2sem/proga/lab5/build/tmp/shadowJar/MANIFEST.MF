@@ -1,2 +1,11 @@
 Manifest-Version: 1.0
+Main-Class: mainProgram.Main
+Class-Path: groovy-3.0.10.jar groovy-ant-3.0.10.jar groovy-astbuilder-3.
+ 0.10.jar groovy-console-3.0.10.jar groovy-datetime-3.0.10.jar groovy-da
+ teutil-3.0.10.jar groovy-groovydoc-3.0.10.jar groovy-json-3.0.10.jar gr
+ oovy-nio-3.0.10.jar groovy-sql-3.0.10.jar groovy-templates-3.0.10.jar g
+ roovy-test-3.0.10.jar groovy-xml-3.0.10.jar javaparser-core-3.17.0.jar 
+ gradle-api-7.5.1.jar kotlin-stdlib-1.6.21.jar kotlin-stdlib-common-1.6.
+ 21.jar kotlin-stdlib-jdk7-1.6.21.jar kotlin-stdlib-jdk8-1.6.21.jar kotl
+ in-reflect-1.6.21.jar gradle-installation-beacon-7.5.1.jar
 

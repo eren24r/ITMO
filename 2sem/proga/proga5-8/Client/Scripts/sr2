@@ -1,0 +1,6 @@
+execute_script sr1
+show
+remove_by_id 1
+show
+clear
+help

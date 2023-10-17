@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="ClientUI.main">
+    <output-path>$PROJECT_DIR$/out/artifacts/ClientUI_main</output-path>
+    <root id="root">
+      <element id="archive" name="ClientUI_main.jar">
+        <element id="module-output" name="ClientUI.main" />
+      </element>
+    </root>
+  </artifact>
+</component>

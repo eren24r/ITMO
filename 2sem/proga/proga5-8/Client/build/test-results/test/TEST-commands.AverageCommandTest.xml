@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="commands.AverageCommandTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-03-14T09:54:08" hostname="eren" time="0.019">
+  <properties/>
+  <testcase name="doo()" classname="commands.AverageCommandTest" time="0.019"/>
+  <system-out><![CDATA[?[maverage of annual turnover: 4354.0?[0m
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

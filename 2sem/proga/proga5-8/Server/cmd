@@ -1,0 +1,24 @@
++ help : справка по доступным командам
++ info : информация о коллекции
++ show : все элементы коллекции в строковом представлении
++- clear : очистить коллекцию
++ save : сохранить коллекцию в файл
++ sum_of_annual_turnover : сумма значений поля annualTurnover для всех элементов коллекции
++ average_of_annual_turnover : среднее значение поля annualTurnover для всех элементов коллекции
++ print_descending : вывести элементы коллекции в порядке убывания
++ change_serialization_type_JSON
++ change_serialization_type_CSV
++ Serialization_type
++ change_print_logic_file - записивать вывод в log файл
++ change_print_logic_console - печатаеть вывод в консол
++ print_logic_type - тип вывода!
++ add_command name - добавить команду
++ exit : завершить программу (без сохранения в файл)
++ remove_by_id id : удалить элемент из коллекции по его id
++ newCommands
++ add element_name : добавить новый элемент в коллекцию
++ update id new_element : обновить значение элемента коллекции
++ execute_script file_name : считать и исполнить скрипт из указанного файла
+
+
+

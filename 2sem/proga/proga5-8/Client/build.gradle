@@ -1,0 +1,43 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+}
+apply plugin: 'com.github.johnrengelman.shadow'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+shadowJar{
+    classifier = 'shadow'
+    mainClassName = 'clientMng.Client'
+}
+task customJar(type: Jar){
+    baseName = 'lab5'
+    manifest {
+        attributes 'Main-Class':'clientMng.Client'
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    } with jar
+}
+
+dependencies {
+    shadow localGroovy()
+    shadow gradleApi()
+    implementation 'com.diogonunes:JColor:5.5.1'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.7.1'
+    implementation 'org.fusesource.jansi:jansi:2.3.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}

@@ -1,0 +1,17 @@
+help
+info
+show
+add newwithotadding 345 435 43634 PUBLIC mfsd ewfewf
+update 7 34
+remove_by_id 6
+sum_of_annual_turnover
+average_of_annual_turnover
+print_descending
+change_serialization_type_JSON
+Serialization_type
+change_serialization_type_CSV
+Serialization_type
+add_command hihello
+change_print_logic_console
+print_logic_type
+save

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ JBoss, Home of Professional Open Source.
+  ~ Copyright 2023, Red Hat, Inc., and individual contributors
+  ~ as indicated by the @author tags. See the copyright.txt file in the
+  ~ distribution for a full listing of individual contributors.
+  ~
+  ~ This is free software; you can redistribute it and/or modify it
+  ~ under the terms of the GNU Lesser General Public License as
+  ~ published by the Free Software Foundation; either version 2.1 of
+  ~ the License, or (at your option) any later version.
+  ~
+  ~ This software is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+  ~ Lesser General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU Lesser General Public
+  ~ License along with this software; if not, write to the Free
+  ~ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+  ~ 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+  -->
+<module name="software.amazon.awssdk.s3" xmlns="urn:jboss:module:1.9">
+
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="annotations-2.20.77.jar"/>
+        <resource-root path="apache-client-2.20.77.jar"/>
+        <resource-root path="arns-2.20.77.jar"/>
+        <resource-root path="auth-2.20.77.jar"/>
+        <resource-root path="aws-core-2.20.77.jar"/>
+        <resource-root path="aws-query-protocol-2.20.77.jar"/>
+        <resource-root path="aws-xml-protocol-2.20.77.jar"/>
+        <resource-root path="crt-core-2.20.77.jar"/>
+        <resource-root path="endpoints-spi-2.20.77.jar"/>
+        <resource-root path="http-client-spi-2.20.77.jar"/>
+        <resource-root path="json-utils-2.20.77.jar"/>
+        <resource-root path="metrics-spi-2.20.77.jar"/>
+        <resource-root path="profiles-2.20.77.jar"/>
+        <resource-root path="protocol-core-2.20.77.jar"/>
+        <resource-root path="regions-2.20.77.jar"/>
+        <resource-root path="s3-2.20.77.jar"/>
+        <resource-root path="sdk-core-2.20.77.jar"/>
+        <resource-root path="third-party-jackson-core-2.20.77.jar"/>
+        <resource-root path="utils-2.20.77.jar"/>
+        <resource-root path="eventstream-1.0.1.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="java.xml"/>
+
+        <module name="org.apache.httpcomponents.core"/>
+        <module name="org.reactivestreams"/>
+        <module name="org.slf4j"/>
+    </dependencies>
+
+</module>

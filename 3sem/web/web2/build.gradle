@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+group 'main'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+task wrapperr(type: Wrapper) {
+    gradleVersion = '8.0'
+}
+
+ext {
+    junitVersion = '5.9.2'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+dependencies {
+    compileOnly('jakarta.servlet:jakarta.servlet-api:5.0.0')
+
+    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+
+    implementation 'javax.servlet:jstl:1.2'
+
+}
+
+test {
+    useJUnitPlatform()
+}
+apply plugin: "war"

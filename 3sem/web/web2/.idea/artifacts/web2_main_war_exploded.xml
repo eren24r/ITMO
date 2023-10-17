@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="web2.main:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/web2_main_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="web2.main" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Gradle: javax.servlet:jstl:1.2" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="web2.main/web/Web Gradle : web2-1.0-SNAPSHOT.war" />
+    </root>
+  </artifact>
+</component>

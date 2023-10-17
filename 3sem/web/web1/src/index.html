@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+
+    <head>
+        <title>WEB LAB 1</title>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+    </head>
+    <header>
+        <img id="itmo_logo" src="https://itmo.ru/promo/itmo-logo-dark.svg">
+        <h1 id="lab1">Лабораторная работа №1 Рахматов Нематджон P3233 вариант 1404</h1>
+        <div><button id="clearHistoryButton">Стереть историю</button></div>
+    </header>
+    <body>
+        <form id="pointForm" method="GET" action="script.php">
+            <div id = "allBody">
+
+                <div id = "bodyA">
+                    <div id="graff">
+                        <svg height="300" width="300" xmlns="http://www.w3.org/2000/svg">
+                            <!--                Оси-->
+                            <line stroke="black" x1="150" x2="150" y1="300" y2="0"></line>
+                            <text x="160" y="12">Y</text>
+                            <line stroke="black" x1="0" x2="300" y1="150" y2="150"></line>
+                            <text x="286" y="135">X</text>
+                            <!--                Промежутки-->
+                            <line stroke="black" x1="147" x2="153" y1="30" y2="30"></line>
+                            <text x="160" y="35">R</text>
+                            <line stroke="black" x1="147" x2="153" y1="90" y2="90"></line>
+                            <text x="160" y="95">R/2</text>
+                            <line stroke="black" x1="147" x2="153" y1="210" y2="210"></line>
+                            <text x="160" y="215">-R/2</text>
+                            <line stroke="black" x1="147" x2="153" y1="270" y2="270"></line>
+                            <text x="160" y="275">-R</text>
+                            <line stroke="black" x1="30" x2="30" y1="147" y2="153"></line>
+                            <text x="23" y="140">-R</text>
+                            <line stroke="black" x1="90" x2="90" y1="147" y2="153"></line>
+                            <text x="83" y="140">-R/2</text>
+                            <line stroke="black" x1="210" x2="210" y1="147" y2="153"></line>
+                            <text x="202" y="140">R/2</text>
+                            <line stroke="black" x1="270" x2="270" y1="147" y2="153"></line>
+                            <text x="264" y="140">R</text>
+                            <!--                Стрелочки-->
+                            <line stroke="black" x1="300" x2="290" y1="150" y2="146"></line>
+                            <line stroke="black" x1="300" x2="290" y1="150" y2="154"></line>
+                            <line stroke="black" x1="150" x2="146" y1="0" y2="10"></line>
+                            <line stroke="black" x1="150" x2="154" y1="0" y2="10"></line>
+                            <circle id = "point" cx="150" cy="150" r="3" fill="green"></circle>
+                            <!--                Выделенная область-->
+                            <polygon fill="blue" fill-opacity="0.3" points="30 150, 150 30, 150 150, 150 30, 210 30, 210 150"></polygon>
+                            <path fill="blue" fill-opacity="0.3" d="M150,150 L210,150 A65,90 1 0,1 150,210"></path>
+                        </svg>
+                    </div>
+
+                    <div id = "chosingValText"><label>Value of X:</label></div>
+
+                    <div id="x_radio">  
+                        
+                        <input type="radio" id="input[type=radio]:checked" name="input[type=radio]:checked" value="-2" />
+                        <label for="radio">-2</label>
+
+                        <input type="radio" id="input[type=radio]:checked" name="input[type=radio]:checked" value="-1.5" />
+                        <label for="radio">-1.5</label>
+
+                        <input type="radio" id="input[type=radio]:checked" name="input[type=radio]:checked" value="-1" />
+                        <label for="radio">-1</label>
+
+                        <input type="radio" id="input[type=radio]:checked" name="input[type=radio]:checked" value="-0.5" />
+                        <label for="radio">-0.5</label>
+
+                        <input type="radio" id="input[type=radio]:checked" name="input[type=radio]:checked" value="0" />
+                        <label for="radio">0</label>
+
+                        <input type="radio" id="input[type=radio]:checked" name="input[type=radio]:checked" value="0.5" />
+                        <label for="radio">0.5</label>
+
+                        <input type="radio" id="input[type=radio]:checked" name="input[type=radio]:checked" value="1" />
+                        <label for="radio">1</label>
+
+                        <input type="radio" id="input[type=radio]:checked" name="input[type=radio]:checked" value="1.5" />
+                        <label for="radio">1.5</label>
+
+                        <input type="radio" id="input[type=radio]:checked" name="input[type=radio]:checked" value="2" />
+                        <label for="radio">2</label>
+                    </div>
+
+                    <div id = "y_text">
+                        <div id = "chosingValText"><label>Value of Y:</label></div>
+                        <input type="text" name="Y-input" id="Y-input" maxlength="6" placeholder="-3...3">
+                    </div>
+
+                    <div id="r_button">
+                        <div id = "chosingValText"><label>Value of R:</label></div>
+                        <input type="hidden" id="r_val">
+                        <input type="button" id="r_val" class="r" name="R-button" value=1>
+                        <input type="button" id="r_val" class="r" name="R-button" value=1.5>
+                        <input type="button" id="r_val" class="r" name="R-button" value=2>
+                        <input type="button" id="r_val" class="r" name="R-button" value=2.5>
+                        <input type="button" id="r_val" class="r" name="R-button" value=3>
+                    </div>
+
+                    <div><input type="submit" value="Answer" id="submit"></div>
+                </div>
+
+                <div id = "man">
+                    <table id = "historyTable" class="tab1">
+                        <tr>
+                            <th>id</th>
+                            <th>X</th>
+                            <th>Y</th>
+                            <th>R</th>
+                            <th>Hit fact</th>
+                            <th>Current time</th>
+                            <th>Script running time, sec</th>
+                        </tr>
+                        <tr>
+                            <td id="id"></td>
+                            <td id="X"></td>
+                            <td id="Y"></td>
+                            <td id="R"></td>
+                            <td id="result"></td>
+                            <td id="time"></td>
+                            <td id="executionTime"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </form>
+        <script src="script.js"></script>
+    </body>
+</html>

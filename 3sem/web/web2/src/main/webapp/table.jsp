@@ -24,6 +24,7 @@
 <table>
     <thead>
     <tr>
+        <th>User</th>
         <th>X</th>
         <th>Y</th>
         <th>R</th>
@@ -35,6 +36,7 @@
     <tbody>
     <c:if test="${data.lastResult != null}">
         <tr>
+            <td>${data.lastResult.usr.username}</td>
             <td>${data.lastResult.x}</td>
             <td>${data.lastResult.y}</td>
             <td>${data.lastResult.r}</td>

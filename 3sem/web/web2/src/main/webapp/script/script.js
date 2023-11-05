@@ -132,8 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
 function send_intersection_rq(x,y,r) {
     drawPoint(x, y, r);
     const resultsBody = document.getElementById("resultsbody");
-    const url = window.location.href + "controller";
-    /*alert(url);*/
+    const url = window.location.href + "controller"
 
     fetch(url, {
         method: "POST",
@@ -145,13 +144,14 @@ function send_intersection_rq(x,y,r) {
         .then((response) => response.text())
         .then((data) => {
             console.log(data);
-            /*window.location.href = 'table.jsp';*/
-            resultsBody.innerHTML = data;
+            window.location.href = 'table.jsp';
+            /*resultsBody.innerHTML = data;*/
         })
         .catch((error) => alert(error));
 }
 
 function call() {
+
     const xr = document.querySelectorAll('input[type=radio]:checked');
     const yy = document.getElementById('Y-input').value;
     const yyy = yy.replace(',', '.');

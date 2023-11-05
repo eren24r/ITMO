@@ -2,13 +2,11 @@ package main.servlet;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.*;
 import main.model.AreaData;
+import main.model.User;
 import main.model.UserAreaDatas;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -20,6 +18,10 @@ public class AreaCheckServlet extends HttpServlet {
     @Override
     protected void doGet(final HttpServletRequest request, final HttpServletResponse response) throws IOException, ServletException {
         final long startExec = System.nanoTime();
+
+        final Cookie[] cook = request.getCookies();
+        String usr = getUsernameCook(cook);
+        String psw = getUserPasswordCook(cook);
 
         final String ctx = this.getServletContext().getContextPath();
 
@@ -40,35 +42,38 @@ public class AreaCheckServlet extends HttpServlet {
             return;
         }
 
-        final boolean result = checkArea(dx, dy, dr);
+        if (usr != null && psw != null) {
+            final boolean result = checkArea(dx, dy, dr);
 
-        final HttpSession currentSession = request.getSession();
-        UserAreaDatas datas = (UserAreaDatas) currentSession.getAttribute("data");
-        if (datas == null) {
-            datas = new UserAreaDatas();
+            final HttpSession currentSession = request.getSession();
+            UserAreaDatas datas = (UserAreaDatas) currentSession.getAttribute("data");
+            if (datas == null) {
+                datas = new UserAreaDatas();
+                currentSession.setAttribute("data", datas);
+            }
+            if (datas.getAreaDataList() == null)
+                datas.setAreaDataList(new LinkedList<>());
+
+            final long endExec = System.nanoTime();
+            final long executionTime = endExec - startExec;
+            final LocalDateTime executedAt = LocalDateTime.now();
+
+            final AreaData data = new AreaData();
+            final User usrData = new User(usr, psw);
+            data.setUsr(usrData);
+            data.setX(dx);
+            data.setY(dy);
+            data.setR(dr);
+            data.setResult(result);
+            data.setCalculationTime(executionTime);
+            data.setCalculatedAt(executedAt);
+
+            datas.getAreaDataList().addLast(data);
             currentSession.setAttribute("data", datas);
-        }
-        if (datas.getAreaDataList() == null)
-            datas.setAreaDataList(new LinkedList<>());
 
-        final long endExec = System.nanoTime();
-        final long executionTime = endExec - startExec;
-        final LocalDateTime executedAt = LocalDateTime.now();
-
-        final AreaData data = new AreaData();
-        data.setX(dx);
-        data.setY(dy);
-        data.setR(dr);
-        data.setResult(result);
-        data.setCalculationTime(executionTime);
-        data.setCalculatedAt(executedAt);
-
-        datas.getAreaDataList().addLast(data);
-        currentSession.setAttribute("data", datas);
-
-        System.out.println("AreaUpdated!");
-        response.setContentType("text/html;charset=UTF-8");
-        final PrintWriter out = response.getWriter();
+            System.out.println("AreaUpdated!");
+            response.setContentType("text/html;charset=UTF-8");
+        /*final PrintWriter out = response.getWriter();
 
         out.println("<!DOCTYPE html>");
         out.println("<html lang=\"en\">");
@@ -113,11 +118,12 @@ public class AreaCheckServlet extends HttpServlet {
 
         System.out.println("Updated!");
 
-        out.close();
+        out.close();*/
         /*RequestDispatcher dispatcher = request.getRequestDispatcher("table.jsp");
         dispatcher.forward(request, response);*/
 
-        /*response.sendRedirect("table.jsp");*/
+            response.sendRedirect("table.jsp");
+        }
 
     }
 
@@ -131,5 +137,29 @@ public class AreaCheckServlet extends HttpServlet {
             return x <= r && y >= (-r / 2);
         }
         return false;
+    }
+
+    public String getUsernameCook(Cookie[] cookies) {
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("username")) { // Проверяем имя куки
+                    String userValue = cookie.getValue(); // Получаем значение куки
+                    return userValue;
+                }
+            }
+        }
+        return null;
+    }
+
+    public String getUserPasswordCook(Cookie[] cookies) {
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("password")) { // Проверяем имя куки
+                    String userValue = cookie.getValue(); // Получаем значение куки
+                    return userValue;
+                }
+            }
+        }
+        return null;
     }
 }

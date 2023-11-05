@@ -7,6 +7,8 @@ import java.util.Objects;
 
 @JavaBean
 public class AreaData implements Serializable {
+
+    private User usr;
     private double x;
     private double y;
     private double r;
@@ -89,5 +91,13 @@ public class AreaData implements Serializable {
                 ", calculationTime=" + calculationTime +
                 ", calculatedAt=" + calculatedAt +
                 '}';
+    }
+
+    public User getUsr() {
+        return usr;
+    }
+
+    public void setUsr(User usr) {
+        this.usr = usr;
     }
 }

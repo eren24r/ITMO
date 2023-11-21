@@ -45,6 +45,11 @@ function drawFig(R){
     calculator.setExpression({ id: 'triangle', latex: `\\polygon((${-R}, 0), (0, 0), (0, ${-R}))`, color: Desmos.Colors.RED, opacity: 0.3});
     calculator.setExpression({ id: 'rectangle', latex: `\\polygon((0, 0), (${R}, 0), (${R}, ${-R/2}), (0, ${-R/2}))`, color: Desmos.Colors.RED, opacity: 0.3});
     calculator.setExpression({id: 'circle', latex: `r<=${R/2} \\{0\\le\\theta\\le\\frac{\\pi}{2}\\}`, color: Desmos.Colors.RED});
+    calculator.setExpression({
+        id: 'circle_lower_left',
+        latex: `r<=${R/2} \\{-\\frac{\\pi}{2}\\le\\theta\\le\\frac{\\pi}{2}\\}`,
+        color: Desmos.Colors.ORANGE
+    });
 }
 
 function drawPointXYRes(x, y, result) {calculator.setExpression({

@@ -1,0 +1,1 @@
+/usr/bin/cc -g -rdynamic "CMakeFiles/image-transformer.dir/src/bmp.o" "CMakeFiles/image-transformer.dir/src/image.o" "CMakeFiles/image-transformer.dir/src/main.o" -o image-transformer 

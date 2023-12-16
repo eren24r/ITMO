@@ -1,0 +1,3 @@
+/home/eren/Desktop/ITMO/3sem/pl/sem7/task1/cmake-build-debug/CMakeFiles/task1.dir
+/home/eren/Desktop/ITMO/3sem/pl/sem7/task1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/eren/Desktop/ITMO/3sem/pl/sem7/task1/cmake-build-debug/CMakeFiles/rebuild_cache.dir

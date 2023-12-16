@@ -1,0 +1,49 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+group 'com.web4'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+war {
+    enabled=true
+}
+
+ext {
+    junitVersion = '5.9.2'
+    springVersion = '6.1.1'
+    javaxAnnotationVersion = '1.3.2'
+    thymeleafVersion= '3.1.1.RELEASE'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+dependencies {
+    implementation("org.thymeleaf.testing:thymeleaf-testing-spring6:${thymeleafVersion}")
+
+    implementation("org.springframework:spring-core:${springVersion}")
+    implementation("org.springframework:spring-beans:${springVersion}")
+    implementation("org.springframework:spring-context:${springVersion}")
+
+    implementation("org.springframework:spring-web:${springVersion}")
+    implementation("org.springframework:spring-webmvc:${springVersion}")
+
+    implementation("org.springframework.security:spring-security-web:${springVersion}")
+    implementation("org.springframework.security:spring-security-config:${springVersion}")
+
+
+    implementation("javax.annotation:javax.annotation-api:${javaxAnnotationVersion}")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+}
+
+test {
+    useJUnitPlatform()
+}

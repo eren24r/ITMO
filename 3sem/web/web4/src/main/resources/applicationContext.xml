@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="org.web4"/>
+    <context:property-placeholder location="classpath:names.properties"/>
+
+    <bean id="classicMusic"
+          class="org.web4.musicProject.ClassicMusic">
+        <constructor-arg name="name" value="Classic Music"/>
+        <constructor-arg name="volume" value="50"/>
+    </bean>
+
+    <bean id="jazMusic"
+          class="org.web4.musicProject.JazMusic">
+
+        <constructor-arg name="name" value="Jaz Music"/>
+        <constructor-arg name="volume" value="75"/>
+    </bean>
+
+    <bean id="musicPlayer"
+          class="org.web4.musicProject.MusicPlayer">
+
+        <property name="musicList">
+            <list>
+                <ref bean="classicMusic"/>
+                <ref bean="jazMusic"/>
+            </list>
+        </property>
+    </bean>
+
+</beans>

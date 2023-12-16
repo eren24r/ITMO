@@ -1,0 +1,15 @@
+# ninja log v5
+0	20	1700903869417927094	CMakeFiles/image-transformer.dir/src/transformations.o	86c7522c66d42ecd
+0	19	1700905019017575303	CMakeFiles/image-transformer.dir/src/main.o	757fbebd185b6b0
+0	2	1700905488960660873	/home/eren/Desktop/ITMO/3sem/pl/lab3/cmake-build-debug/CMakeFiles/cmake.verify_globs	fd648409f7948ddf
+2	14	1700905488968660625	build.ninja	7b674b72d87a4e28
+1	18	1700905027276364972	CMakeFiles/image-transformer.dir/src/bmp.o	80136535410b0bc2
+0	20	1700905019017575303	CMakeFiles/image-transformer.dir/src/rotate.o	c29b6a7860a1cc9b
+18	31	1700905027288368994	image-transformer	ce8697683991d5fc
+2	15	1700905488968660625	build.ninja	7b674b72d87a4e28
+0	2	0	/home/eren/Desktop/ITMO/3sem/pl/lab3/cmake-build-debug/CMakeFiles/cmake.verify_globs	fd648409f7948ddf
+0	2	0	/home/eren/Desktop/ITMO/3sem/pl/lab3/cmake-build-debug/CMakeFiles/cmake.verify_globs	fd648409f7948ddf
+1	21	1700906030312122088	CMakeFiles/image-transformer.dir/src/main.o	757fbebd185b6b0
+0	21	1700906030312122088	CMakeFiles/image-transformer.dir/src/bmp.o	80136535410b0bc2
+1	21	1700906030312122088	CMakeFiles/image-transformer.dir/src/rotate.o	c29b6a7860a1cc9b
+21	34	1700906030324121904	image-transformer	ce8697683991d5fc

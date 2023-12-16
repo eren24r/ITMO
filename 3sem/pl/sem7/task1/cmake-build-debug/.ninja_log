@@ -1,0 +1,6 @@
+# ninja log v5
+259	316	1701773077414335133	task1	9681bae149a3e0c1
+0	259	1701773077358336079	CMakeFiles/task1.dir/main.cpp.o	bbabdf99fa477f56
+0	17	1701773302114514371	CMakeFiles/task1.dir/no-tail-rec.c.o	d7017e48c3467d25
+0	17	1701773302114514371	CMakeFiles/task1.dir/tail-rec.c.o	ccd3da97423cca06
+0	16	1701773482247420451	CMakeFiles/task1.dir/no-tail-rec.c.o	d7017e48c3467d25

@@ -5,8 +5,8 @@
 #ifndef IMAGE_TRANSFORMER_STATUS_H
 #define IMAGE_TRANSFORMER_STATUS_H
 
+#include "image.h"
 #include <stdio.h>
-#include "inc/image.h"
 
 enum read_status {
     READ_OK = 0,

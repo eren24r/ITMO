@@ -1,0 +1,8 @@
+/snap/clion/260/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/snap/clion/260/bin/ninja/linux/x64/ninja -G Ninja -S /home/eren/Desktop/ITMO/3sem/pl/lab4 -B /home/eren/Desktop/ITMO/3sem/pl/lab4/cmake-build-debug
+CMake Error at CMakeLists.txt:7 (add_library):
+  The target name "src/mem.c" is reserved or not valid for certain CMake
+  features, such as generator expressions, and may result in undefined
+  behavior.
+
+
+-- Configuring incomplete, errors occurred!

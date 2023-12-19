@@ -7,6 +7,10 @@
 				{
 					"build" : ".",
 					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27"
+					},
 					"projectIndex" : 0,
 					"source" : ".",
 					"targetIndexes" : 
@@ -23,7 +27,7 @@
 					[
 						0
 					],
-					"name" : "Project",
+					"name" : "lab4",
 					"targetIndexes" : 
 					[
 						0
@@ -34,9 +38,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "image-transformer::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-image-transformer-Debug-9248cad99691d5e7b4b0.json",
-					"name" : "image-transformer",
+					"id" : "lab4::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-lab4-Debug-0758a1c8f0335ba9126c.json",
+					"name" : "lab4",
 					"projectIndex" : 0
 				}
 			]
@@ -45,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/eren/Desktop/ITMO/3sem/pl/lab3/cmake-build-debug",
-		"source" : "/home/eren/Desktop/ITMO/3sem/pl/lab3"
+		"build" : "/home/eren/Desktop/ITMO/3sem/pl/lab4/cmake-build-debug",
+		"source" : "/home/eren/Desktop/ITMO/3sem/pl/lab4"
 	},
 	"version" : 
 	{

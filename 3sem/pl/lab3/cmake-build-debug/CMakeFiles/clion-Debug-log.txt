@@ -27,6 +27,12 @@ CMake Warning (dev) in CMakeLists.txt:
   both commands.
 This warning is for project developers.  Use -Wno-dev to suppress it.
 
+CMake Warning (dev) at CMakeLists.txt:7 (add_executable):
+  Policy CMP0002 is not set: Logical target names must be globally unique.
+  Run "cmake --help-policy CMP0002" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
 CMake Warning (dev) in CMakeLists.txt:
   No cmake_minimum_required command is present.  A line of code such as
 

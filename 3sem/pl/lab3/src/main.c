@@ -1,9 +1,9 @@
+#include "image.h"
+#include "status.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "inc/image.h"
-#include "inc/status.h"
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[4]) {
     if (argc != 4) {
         fprintf(stderr, "Usage: %s <source-image> <transformed-image> <angle>\n", argv[0]);
         return EXIT_FAILURE;
@@ -28,20 +28,28 @@ int main(int argc, char *argv[]) {
     struct image transformed_image;
 
     switch (angle) {
+        case 0: {
+            /*struct image temp_img = rotate_180(original_image);
+            transformed_image = rotate_180(temp_img);
+            free(temp_img.data);*/
+            transformed_image = getImage(&original_image);;
+            break;
+        }
         case 90:
         case -270:
             transformed_image = rotate_90(original_image);
-            break;
-        case -90:
-        case 270:
-            transformed_image = rotate_minus_90(original_image);
             break;
         case 180:
         case -180:
             transformed_image = rotate_180(original_image);
             break;
+        case 270:
+        case -90:
+            transformed_image = rotate_270(original_image);
+            break;
+
         default:
-            fprintf(stderr, "Unsupported angle: %d\n", angle);
+            fprintf(stderr, "angle will be: 90, -90, 180, -180, 270, -270\n");
             empty_image(&original_image);
             return EXIT_FAILURE;
     }

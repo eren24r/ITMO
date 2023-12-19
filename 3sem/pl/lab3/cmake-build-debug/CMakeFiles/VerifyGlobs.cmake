@@ -3,11 +3,10 @@
 cmake_policy(SET CMP0009 NEW)
 
 # sources at CMakeLists.txt:1 (file)
-file(GLOB_RECURSE NEW_GLOB FOLLOW_SYMLINKS LIST_DIRECTORIES false "/home/eren/Desktop/ITMO/3sem/pl/lab3/src/*.c")
+file(GLOB_RECURSE NEW_GLOB FOLLOW_SYMLINKS LIST_DIRECTORIES false "/home/eren/Desktop/ITMO/3sem/pl/lab3/include/*.h")
 set(OLD_GLOB
-  "/home/eren/Desktop/ITMO/3sem/pl/lab3/src/bmp.c"
-  "/home/eren/Desktop/ITMO/3sem/pl/lab3/src/image.c"
-  "/home/eren/Desktop/ITMO/3sem/pl/lab3/src/main.c"
+  "/home/eren/Desktop/ITMO/3sem/pl/lab3/include/image.h"
+  "/home/eren/Desktop/ITMO/3sem/pl/lab3/include/status.h"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
@@ -15,10 +14,11 @@ if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
 endif()
 
 # sources at CMakeLists.txt:1 (file)
-file(GLOB_RECURSE NEW_GLOB FOLLOW_SYMLINKS LIST_DIRECTORIES false "/home/eren/Desktop/ITMO/3sem/pl/lab3/src/inc/*.h")
+file(GLOB_RECURSE NEW_GLOB FOLLOW_SYMLINKS LIST_DIRECTORIES false "/home/eren/Desktop/ITMO/3sem/pl/lab3/src/*.c")
 set(OLD_GLOB
-  "/home/eren/Desktop/ITMO/3sem/pl/lab3/src/inc/image.h"
-  "/home/eren/Desktop/ITMO/3sem/pl/lab3/src/inc/status.h"
+  "/home/eren/Desktop/ITMO/3sem/pl/lab3/src/bmp.c"
+  "/home/eren/Desktop/ITMO/3sem/pl/lab3/src/image.c"
+  "/home/eren/Desktop/ITMO/3sem/pl/lab3/src/main.c"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")

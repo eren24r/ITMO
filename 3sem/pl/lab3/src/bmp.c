@@ -1,5 +1,6 @@
+#include "status.h"
+#include "image.h"
 #include <stdlib.h>
-#include "inc/status.h"
 
 #pragma pack(push, 1)
 
@@ -46,7 +47,7 @@ enum read_status from_bmp(FILE *in, struct image *img) {
             fread(&(img->data[i * img->width + j]), sizeof(struct pixel), 1, in);
         }
 
-        fseek(in, padding, SEEK_CUR);
+        fseek(in, (long)padding, SEEK_CUR);
     }
 
     return READ_OK;

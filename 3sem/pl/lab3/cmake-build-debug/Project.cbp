@@ -86,16 +86,16 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/eren/Desktop/ITMO/3sem/pl/lab3/include/image.h">
+			<Option target="image-transformer"/>
+		</Unit>
+		<Unit filename="/home/eren/Desktop/ITMO/3sem/pl/lab3/include/status.h">
+			<Option target="image-transformer"/>
+		</Unit>
 		<Unit filename="/home/eren/Desktop/ITMO/3sem/pl/lab3/src/bmp.c">
 			<Option target="image-transformer"/>
 		</Unit>
 		<Unit filename="/home/eren/Desktop/ITMO/3sem/pl/lab3/src/image.c">
-			<Option target="image-transformer"/>
-		</Unit>
-		<Unit filename="/home/eren/Desktop/ITMO/3sem/pl/lab3/src/inc/image.h">
-			<Option target="image-transformer"/>
-		</Unit>
-		<Unit filename="/home/eren/Desktop/ITMO/3sem/pl/lab3/src/inc/status.h">
 			<Option target="image-transformer"/>
 		</Unit>
 		<Unit filename="/home/eren/Desktop/ITMO/3sem/pl/lab3/src/main.c">

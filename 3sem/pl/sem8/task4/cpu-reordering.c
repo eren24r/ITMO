@@ -13,11 +13,11 @@ void *thread0_impl( void *param )
   for (;;) {
     sem_wait( &sem_begin0 );
 
-      __asm__ __volatile__ ("" ::: "memory");
+     // __asm__ __volatile__ ("mfence" ::: "memory");
     x = 1;
-      __asm__ __volatile__ ("" ::: "memory");
+      __asm__ __volatile__ ("mfence" ::: "memory");
     read0 = y;
-      __asm__ __volatile__ ("" ::: "memory");
+      //__asm__ __volatile__ ("mfence" ::: "memory");
 
     sem_post( &sem_end );
   }
@@ -29,11 +29,11 @@ void *thread1_impl( void *param )
   for (;;) {
     sem_wait( &sem_begin1 );
 
-      __asm__ __volatile__ ("" ::: "memory");
+      //__asm__ __volatile__ ("mfence" ::: "memory");
     y = 1;
-      __asm__ __volatile__ ("" ::: "memory");
+      __asm__ __volatile__ ("mfence" ::: "memory");
     read1 = x;
-      __asm__ __volatile__ ("" ::: "memory");
+      //__asm__ __volatile__ ("mfence" ::: "memory");
 
       sem_post( &sem_end );
   }

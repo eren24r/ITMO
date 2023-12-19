@@ -41,6 +41,7 @@ int main(void) {
     printf("Shared memory at: %p\n" , (void*)shmem);
     int pid = fork();
     if (pid == 0) {
+        puts("child process");
         puts("[child] enter index and new value: ");
         size_t index;
         int num;
@@ -48,6 +49,7 @@ int main(void) {
         change_array_element(index, num, shmem, ARR_SIZE);
         puts("[child] finishing child process...");
     } else {
+        puts("parent process");
         printf("[child] Child's pid is: %d\n", pid);
         puts("[parent] array before: ");
         print_array(shmem, ARR_SIZE);

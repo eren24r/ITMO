@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <semaphore.h>
 #include <fcntl.h>
+#include <sys/wait.h>
 
 #define ARR_SIZE 10
 
@@ -38,7 +39,7 @@ int main(void) {
     }
 
     sem_t *sem;
-    sem = sem_open("/my_semaphore", O_CREAT, 0666, 0);  // создание семафора
+    sem = sem_open("/my_semaphore", O_CREAT, 0666, 0);
 
     int pipe_fd[2];
     if (pipe(pipe_fd) == -1) {
@@ -52,35 +53,42 @@ int main(void) {
         close(pipe_fd[0]);
 
         while (1) {
-            size_t index;
+            int index;
             int num;
             printf("[child] enter index and new value (or -1 to exit): ");
-            scanf("%zu %d", &index, &num);
+            scanf("%d %d", &index, &num);
 
             if (index < 0) {
                 close(pipe_fd[1]);
-                sem_post(sem);  // увеличение значения семафора
-                sem_close(sem);  // закрытие семафора
+                sem_post(sem);
+                sem_close(sem);
                 exit(EXIT_SUCCESS);
             }
 
             change_array_element(index, num, shmem, ARR_SIZE);
             write(pipe_fd[1], shmem, sizeof(int) * ARR_SIZE);
 
-            sem_post(sem);  // увеличение значения семафора
+            sem_post(sem);
         }
     } else {
         close(pipe_fd[1]);
 
         printf("[parent] Child's pid is: %d\n", pid);
         while (1) {
-            sem_wait(sem);  // ожидание, пока семафор не станет положительным
+            sem_wait(sem);
 
             puts("[parent] array before: ");
             print_array(shmem, ARR_SIZE);
             puts("[parent] waiting for child process to send data...");
 
-            read(pipe_fd[0], shmem, sizeof(int) * ARR_SIZE);
+            ssize_t bytesRead = read(pipe_fd[0], shmem, sizeof(int) * ARR_SIZE);
+
+            if (bytesRead <= 0) {
+                waitpid(pid, NULL, 0);
+                sem_close(sem);
+                sem_unlink("/my_semaphore");
+                break;
+            }
 
             puts("[parent] array after: ");
             print_array(shmem, ARR_SIZE);

@@ -1,13 +1,11 @@
-//
-// Created by eren on 12/19/23.
-//
-#define ARR_SIZE 10
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/mman.h>
 #include <string.h>
 #include <unistd.h>
-#include <wait.h>
+#include <sys/wait.h>
+
+#define ARR_SIZE 10
 
 void* create_shared_memory(size_t size) {
     return mmap(NULL,
@@ -34,7 +32,7 @@ int main(void) {
 
     int nums[] = {1,2,3,4,5,6,7,8,9,10};
 
-    int* shmem = create_shared_memory(sizeof(int)*10);
+    int* shmem = create_shared_memory(sizeof(int) * 10);
     for (size_t i = 0; i < ARR_SIZE; i++) {
         shmem[i] = nums[i];
     }
@@ -45,21 +43,23 @@ int main(void) {
         exit(EXIT_FAILURE);
     }
 
-    printf("Shared memory at: %p\n" , (void*)shmem);
+    printf("Shared memory at: %p\n", (void*)shmem);
     int pid = fork();
     if (pid == 0) {
         close(pipe_fd[0]);
 
         while (1) {
-            size_t index;
+            int index;
             int num;
             printf("[child] enter index and new value (or -1 to exit): ");
-            scanf("%zu %d", &index, &num);
+            scanf("%d", &index);
 
-            if (index < 0) {
+            if (index == -1) {
                 close(pipe_fd[1]);
                 exit(EXIT_SUCCESS);
             }
+
+            scanf("%d", &num);
 
             change_array_element(index, num, shmem, ARR_SIZE);
             write(pipe_fd[1], shmem, sizeof(int) * ARR_SIZE);
@@ -73,7 +73,10 @@ int main(void) {
             print_array(shmem, ARR_SIZE);
             puts("[parent] waiting for child process to send data...");
 
-            read(pipe_fd[0], shmem, sizeof(int) * ARR_SIZE);
+            if (read(pipe_fd[0], shmem, sizeof(int) * ARR_SIZE) <= 0) {
+                waitpid(pid, NULL, 0);
+                break;
+            }
 
             puts("[parent] array after: ");
             print_array(shmem, ARR_SIZE);

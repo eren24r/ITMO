@@ -1,0 +1,3 @@
+C:/Users/eren/Documents/GitHub/ITMO/4sem/algos/YandexContext/I/cmake-build-debug/CMakeFiles/I.dir
+C:/Users/eren/Documents/GitHub/ITMO/4sem/algos/YandexContext/I/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/eren/Documents/GitHub/ITMO/4sem/algos/YandexContext/I/cmake-build-debug/CMakeFiles/rebuild_cache.dir

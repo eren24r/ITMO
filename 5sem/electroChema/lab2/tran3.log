@@ -1,0 +1,22 @@
+Circuit: * C:\Users\Aorus\Documents\GitHub\ITMO\5sem\electroChema\lab2\tran3.asc
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Wed Sep 11 18:48:55 2024
+Total elapsed time: 2.434 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 967829
+traniter = 967826
+tranpoints = 483914
+accept = 461435
+rejected = 22479
+matrix size = 4
+fillins = 0
+solver = Normal
+Avg thread counts: 1.0/1.0/1.0/1.0
+Matrix Compiler1:       8 opcodes  0.2/[0.1]/0.2
+Matrix Compiler2:      21 opcodes  0.1/[0.1]/0.2
+

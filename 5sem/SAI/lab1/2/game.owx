@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/aorus/ontologies/2024/8/untitled-ontology-2"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/aorus/ontologies/2024/8/untitled-ontology-2">
+    <Prefix name="" IRI="http://www.semanticweb.org/aorus/ontologies/2024/8/untitled-ontology-2/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Character"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Game"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Genre"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Platform"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#availableOnPlatform"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#belongsToGenre"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCharacter"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#action"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#geralt"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#gta_v"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#minecraft"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#overwatch"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#pc"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ps4"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#rpg"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#sandbox"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#shooter"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#the_witcher_3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#tracer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#trevor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#xbox_one"/>
+    </Declaration>
+    <ClassAssertion>
+        <Class IRI="#Genre"/>
+        <NamedIndividual IRI="#action"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Character"/>
+        <NamedIndividual IRI="#geralt"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Game"/>
+        <NamedIndividual IRI="#gta_v"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Game"/>
+        <NamedIndividual IRI="#minecraft"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Game"/>
+        <NamedIndividual IRI="#overwatch"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Platform"/>
+        <NamedIndividual IRI="#pc"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Platform"/>
+        <NamedIndividual IRI="#ps4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Genre"/>
+        <NamedIndividual IRI="#rpg"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Genre"/>
+        <NamedIndividual IRI="#sandbox"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Genre"/>
+        <NamedIndividual IRI="#shooter"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Game"/>
+        <NamedIndividual IRI="#the_witcher_3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Character"/>
+        <NamedIndividual IRI="#tracer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Character"/>
+        <NamedIndividual IRI="#trevor"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Platform"/>
+        <NamedIndividual IRI="#xbox_one"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#availableOnPlatform"/>
+        <NamedIndividual IRI="#gta_v"/>
+        <NamedIndividual IRI="#pc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#availableOnPlatform"/>
+        <NamedIndividual IRI="#gta_v"/>
+        <NamedIndividual IRI="#ps4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToGenre"/>
+        <NamedIndividual IRI="#gta_v"/>
+        <NamedIndividual IRI="#rpg"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#availableOnPlatform"/>
+        <NamedIndividual IRI="#minecraft"/>
+        <NamedIndividual IRI="#pc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#availableOnPlatform"/>
+        <NamedIndividual IRI="#minecraft"/>
+        <NamedIndividual IRI="#ps4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToGenre"/>
+        <NamedIndividual IRI="#minecraft"/>
+        <NamedIndividual IRI="#action"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#availableOnPlatform"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#belongsToGenre"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCharacter"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#availableOnPlatform"/>
+        <Class IRI="#Platform"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#belongsToGenre"/>
+        <Class IRI="#Genre"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCharacter"/>
+        <Class IRI="#Character"/>
+    </ObjectPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

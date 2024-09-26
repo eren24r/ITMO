@@ -1,0 +1,90 @@
+<rdf:RDF xmlns="http://www.semanticweb.org/game_ontology#"
+     xml:base="http://www.semanticweb.org/game_ontology"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+     
+    <!-- Определение классов -->
+    <owl:Class rdf:about="#Game"/>
+    <owl:Class rdf:about="#Genre"/>
+    <owl:Class rdf:about="#Platform"/>
+    <owl:Class rdf:about="#Character"/>
+    
+    <!-- Определение объектных свойств -->
+    <owl:ObjectProperty rdf:about="#belongsToGenre"/>
+    <owl:ObjectProperty rdf:about="#availableOnPlatform"/>
+    <owl:ObjectProperty rdf:about="#hasCharacter"/>
+
+    <!-- Определение индивидуумов (игры) -->
+    <owl:NamedIndividual rdf:about="#gta_v">
+        <rdf:type rdf:resource="#Game"/>
+        <belongsToGenre rdf:resource="#action"/>
+        <availableOnPlatform rdf:resource="#pc"/>
+        <availableOnPlatform rdf:resource="#ps4"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#the_witcher_3">
+        <rdf:type rdf:resource="#Game"/>
+        <belongsToGenre rdf:resource="#rpg"/>
+        <availableOnPlatform rdf:resource="#pc"/>
+        <hasCharacter rdf:resource="#geralt"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#minecraft">
+        <rdf:type rdf:resource="#Game"/>
+        <belongsToGenre rdf:resource="#sandbox"/>
+        <availableOnPlatform rdf:resource="#pc"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#overwatch">
+        <rdf:type rdf:resource="#Game"/>
+        <belongsToGenre rdf:resource="#shooter"/>
+        <availableOnPlatform rdf:resource="#ps4"/>
+        <availableOnPlatform rdf:resource="#xbox_one"/>
+        <hasCharacter rdf:resource="#tracer"/>
+    </owl:NamedIndividual>
+
+    <!-- Определение индивидуумов (жанры) -->
+    <owl:NamedIndividual rdf:about="#action">
+        <rdf:type rdf:resource="#Genre"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#rpg">
+        <rdf:type rdf:resource="#Genre"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#sandbox">
+        <rdf:type rdf:resource="#Genre"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#shooter">
+        <rdf:type rdf:resource="#Genre"/>
+    </owl:NamedIndividual>
+
+    <!-- Определение индивидуумов (платформы) -->
+    <owl:NamedIndividual rdf:about="#pc">
+        <rdf:type rdf:resource="#Platform"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ps4">
+        <rdf:type rdf:resource="#Platform"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#xbox_one">
+        <rdf:type rdf:resource="#Platform"/>
+    </owl:NamedIndividual>
+
+    <!-- Определение индивидуумов (персонажи) -->
+    <owl:NamedIndividual rdf:about="#geralt">
+        <rdf:type rdf:resource="#Character"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#trevor">
+        <rdf:type rdf:resource="#Character"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#tracer">
+        <rdf:type rdf:resource="#Character"/>
+    </owl:NamedIndividual>
+</rdf:RDF>

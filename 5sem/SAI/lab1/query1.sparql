@@ -1,0 +1,6 @@
+PREFIX : <http://www.semanticweb.org/game_ontology#>
+
+SELECT ?game WHERE {
+  ?game rdf:type :Game .
+  ?game :belongsToGenre :rpg .
+}

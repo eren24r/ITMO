@@ -21,14 +21,20 @@ public class GameRecommendationSystem {
         Integer age = scanner.nextInt();
         scanner.nextLine();  // Consume newline left-over
 
+        System.out.println("Platform: ");
+        String platform = scanner.nextLine();
+
+        System.out.println("Character: ");
+        String character = scanner.nextLine();
+
         System.out.println("Введите ваши любимые жанры (например, RPG, Indie, Shooter): ");
         String genres = scanner.nextLine();
+        String[] genders = genres.split(", ");
+        for (String gender : genders) {
+            String sparqlQuery = buildSparqlQuery(age, gender, platform, character);
 
-        // Построение SPARQL-запроса
-        String sparqlQuery = buildSparqlQuery(age, genres);
-
-        // Выполнение запроса
-        executeSparqlQuery(model, sparqlQuery);
+            executeSparqlQuery(model, sparqlQuery);
+        }
     }
 
     // Загрузка онтологии
@@ -42,27 +48,40 @@ public class GameRecommendationSystem {
         return model;
     }
 
-    // Построение SPARQL-запроса на основе данных пользователя
-    private static String buildSparqlQuery(int age, String genres) {
-        String[] genreArray = genres.split(",\\s*");
-        StringBuilder genreFilter = new StringBuilder();
-        for (String genre : genreArray) {
-            genreFilter.append("?game ex:hasGenre ex:").append(genre).append(" .\n");
+    public static String buildSparqlQuery(Integer age, String genre, String platform, String character) {
+
+        String prefixes =
+                "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+                        "PREFIX ex: <http://example.com/game#>\n" +
+                        "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n";
+
+        StringBuilder query = new StringBuilder();
+        query.append(prefixes);
+        query.append("SELECT ?game ?label WHERE {\n");
+        query.append("  ?game rdf:type ex:Game .\n");
+
+        if (genre != null && !genre.isEmpty()) {
+            query.append("  ?game ex:hasGenre ex:").append(genre).append(" .\n");
         }
 
-        return "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
-                "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n" +
-                "PREFIX ex: <http://example.com/game#>\n" +
-                "SELECT ?game ?gameName\n" +
-                "WHERE {\n" +
-                "  ?game rdf:type ex:Game .\n" +
-                "  ?game ex:hasAgeRestriction ?ageRestriction .\n" +
-                genreFilter.toString() +
-                "  ?game rdfs:label ?gameName .\n" +
-                "  FILTER (?ageRestriction <= " + age + ")\n" +
-                "}";
-    }
+        if (platform != null && !platform.isEmpty()) {
+            query.append("  ?game ex:hasPlatform ex:").append(platform).append(" .\n");
+        }
 
+        if (character != null && !character.isEmpty()) {
+            query.append("  ?game ex:hasCharacter ex:").append(character).append(" .\n");
+        }
+
+        if (age != null) {
+            query.append("  ?game ex:hasAgeRestriction ?age .\n");
+            query.append("  FILTER (?age <= ").append(age).append(") .\n");
+        }
+
+        query.append("  ?game rdfs:label ?label .\n");
+        query.append("}");
+
+        return query.toString();
+    }
 
     // Выполнение SPARQL-запроса
     private static void executeSparqlQuery(Model model, String sparqlQuery) {
@@ -76,7 +95,7 @@ public class GameRecommendationSystem {
             System.out.println("Рекомендованные игры:");
             while (results.hasNext()) {
                 QuerySolution soln = results.nextSolution();
-                String gameName = soln.getLiteral("gameName").getString();
+                String gameName = soln.getLiteral("label").getString();
                 System.out.println("- " + gameName);
             }
         }

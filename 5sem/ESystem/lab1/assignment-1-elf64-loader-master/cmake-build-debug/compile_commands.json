@@ -1,0 +1,14 @@
+[
+{
+  "directory": "C:/Users/Aorus/Desktop/assignment-1-elf64-loader-master/cmake-build-debug",
+  "command": "C:\\PROGRA~1\\JETBRA~1\\CLION2~1.2\\bin\\mingw\\bin\\gcc.exe -IC:/Users/Aorus/Desktop/assignment-1-elf64-loader-master/solution/src -IC:/Users/Aorus/Desktop/assignment-1-elf64-loader-master/solution/include -pedantic -Wall -Werror -Wno-unused -ggdb -g -fdiagnostics-color=always -o solution\\CMakeFiles\\elf64-loader.dir\\src\\m.c.obj -c C:\\Users\\Aorus\\Desktop\\assignment-1-elf64-loader-master\\solution\\src\\m.c",
+  "file": "C:\\Users\\Aorus\\Desktop\\assignment-1-elf64-loader-master\\solution\\src\\m.c",
+  "output": "solution\\CMakeFiles\\elf64-loader.dir\\src\\m.c.obj"
+},
+{
+  "directory": "C:/Users/Aorus/Desktop/assignment-1-elf64-loader-master/cmake-build-debug",
+  "command": "C:\\PROGRA~1\\JETBRA~1\\CLION2~1.2\\bin\\mingw\\bin\\gcc.exe -IC:/Users/Aorus/Desktop/assignment-1-elf64-loader-master/solution/src -IC:/Users/Aorus/Desktop/assignment-1-elf64-loader-master/solution/include -pedantic -Wall -Werror -Wno-unused -ggdb -g -fdiagnostics-color=always -o solution\\CMakeFiles\\elf64-loader.dir\\src\\main.c.obj -c C:\\Users\\Aorus\\Desktop\\assignment-1-elf64-loader-master\\solution\\src\\main.c",
+  "file": "C:\\Users\\Aorus\\Desktop\\assignment-1-elf64-loader-master\\solution\\src\\main.c",
+  "output": "solution\\CMakeFiles\\elf64-loader.dir\\src\\main.c.obj"
+}
+]

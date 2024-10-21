@@ -1,0 +1,11 @@
+C:/Users/Aorus/Desktop/assignment-1-elf64-loader-master/cmake-build-debug/CMakeFiles/test.dir
+C:/Users/Aorus/Desktop/assignment-1-elf64-loader-master/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Aorus/Desktop/assignment-1-elf64-loader-master/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Aorus/Desktop/assignment-1-elf64-loader-master/cmake-build-debug/solution/CMakeFiles/elf64-loader.dir
+C:/Users/Aorus/Desktop/assignment-1-elf64-loader-master/cmake-build-debug/solution/CMakeFiles/test.dir
+C:/Users/Aorus/Desktop/assignment-1-elf64-loader-master/cmake-build-debug/solution/CMakeFiles/edit_cache.dir
+C:/Users/Aorus/Desktop/assignment-1-elf64-loader-master/cmake-build-debug/solution/CMakeFiles/rebuild_cache.dir
+C:/Users/Aorus/Desktop/assignment-1-elf64-loader-master/cmake-build-debug/tester/CMakeFiles/check.dir
+C:/Users/Aorus/Desktop/assignment-1-elf64-loader-master/cmake-build-debug/tester/CMakeFiles/test.dir
+C:/Users/Aorus/Desktop/assignment-1-elf64-loader-master/cmake-build-debug/tester/CMakeFiles/edit_cache.dir
+C:/Users/Aorus/Desktop/assignment-1-elf64-loader-master/cmake-build-debug/tester/CMakeFiles/rebuild_cache.dir

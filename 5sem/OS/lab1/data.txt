@@ -1,0 +1,355 @@
+#include <windows.h>
+#include <iostream>
+#include <chrono>
+
+void ExecuteCommand(const std::string& command) {
+    STARTUPINFO si;
+    PROCESS_INFORMATION pi;
+    ZeroMemory(&si, sizeof(si));
+    si.cb = sizeof(si);
+    ZeroMemory(&pi, sizeof(pi));
+
+    // Время начала
+    auto start = std::chrono::high_resolution_clock::now();
+
+    // Запуск процесса
+    if (CreateProcess(NULL, const_cast<char*>(command.c_str()), NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi)) {
+        WaitForSingleObject(pi.hProcess, INFINITE);
+
+        // Время окончания
+        auto end = std::chrono::high_resolution_clock::now();
+        std::chrono::duration<double> elapsed = end - start;
+        std::cout << "Time: " << elapsed.count() << " sec" << std::endl;
+
+        CloseHandle(pi.hProcess);
+        CloseHandle(pi.hThread);
+    } else {
+        std::cerr << "Error proccessing: " << GetLastError() << std::endl;
+    }
+}
+
+int main() {
+    std::string command;
+    while (true) {
+        std::cout << "Enter command (or 'exit' for exit): ";
+        std::getline(std::cin, command);
+        if (command == "exit") break;
+        ExecuteCommand(command);
+    }
+    return 0;
+}
+#include <iostream>
+#include <vector>
+#include <cstdlib>
+
+// Функция для поиска целых чисел в массиве
+std::vector<int> searchInts(const std::vector<int>& data, int threshold) {
+    std::vector<int> results;
+    for (int val : data) {
+        if (val > threshold) {
+            results.push_back(val);
+        }
+    }
+    return results;
+}
+
+// Функция для расчёта экспоненциального скользящего среднего
+double calculateEMA(const std::vector<int>& data, double alpha) {
+    if (data.empty()) return 0.0;
+    double ema = data[0];  // Начальное значение EMA
+    for (size_t i = 1; i < data.size(); i++) {
+        ema = alpha * data[i] + (1 - alpha) * ema;
+    }
+    return ema;
+}
+
+int main(int argc, char* argv[]) {
+    int repetitions = (argc > 1) ? atoi(argv[1]) : 10;
+    int threshold = 50;  // Пороговое значение для поиска
+    double alpha = 0.1;  // Параметр сглаживания для EMA
+
+    // Создаём массив данных
+    std::vector<int> data(1000);
+    for (int& val : data) {
+        val = rand() % 100;  // Заполняем случайными числами от 0 до 99
+    }
+
+    // Нагрузка: повторяем поиск и расчет EMA
+    for (int i = 0; i < repetitions; i++) {
+        std::vector<int> results = searchInts(data, threshold);
+        double ema = calculateEMA(results, alpha);
+        std::cout << "EMA for repetition " << i + 1 << ": " << ema << std::endl;
+    }
+
+    return 0;
+}
+#include <iostream>
+#include <vector>
+#include <cstdlib>
+
+// Функция для поиска целых чисел в массиве
+std::vector<int> searchInts(const std::vector<int>& data, int threshold) {
+    std::vector<int> results;
+    for (int val : data) {
+        if (val > threshold) {
+            results.push_back(val);
+        }
+    }
+    return results;
+}
+
+// Функция для расчёта экспоненциального скользящего среднего
+double calculateEMA(const std::vector<int>& data, double alpha) {
+    if (data.empty()) return 0.0;
+    double ema = data[0];  // Начальное значение EMA
+    for (size_t i = 1; i < data.size(); i++) {
+        ema = alpha * data[i] + (1 - alpha) * ema;
+    }
+    return ema;
+}
+
+int main(int argc, char* argv[]) {
+    int repetitions = (argc > 1) ? atoi(argv[1]) : 10;
+    int threshold = 50;  // Пороговое значение для поиска
+    double alpha = 0.1;  // Параметр сглаживания для EMA
+
+    // Создаём массив данных
+    std::vector<int> data(1000);
+    for (int& val : data) {
+        val = rand() % 100;  // Заполняем случайными числами от 0 до 99
+    }
+
+    // Нагрузка: повторяем поиск и расчет EMA
+    for (int i = 0; i < repetitions; i++) {
+        std::vector<int> results = searchInts(data, threshold);
+        double ema = calculateEMA(results, alpha);
+        std::cout << "EMA for repetition " << i + 1 << ": " << ema << std::endl;
+    }
+
+    return 0;
+}
+#include <iostream>
+#include <vector>
+#include <cstdlib>
+
+// Функция для поиска целых чисел в массиве
+std::vector<int> searchInts(const std::vector<int>& data, int threshold) {
+    std::vector<int> results;
+    for (int val : data) {
+        if (val > threshold) {
+            results.push_back(val);
+        }
+    }
+    return results;
+}
+
+// Функция для расчёта экспоненциального скользящего среднего
+double calculateEMA(const std::vector<int>& data, double alpha) {
+    if (data.empty()) return 0.0;
+    double ema = data[0];  // Начальное значение EMA
+    for (size_t i = 1; i < data.size(); i++) {
+        ema = alpha * data[i] + (1 - alpha) * ema;
+    }
+    return ema;
+}
+
+int main(int argc, char* argv[]) {
+    int repetitions = (argc > 1) ? atoi(argv[1]) : 10;
+    int threshold = 50;  // Пороговое значение для поиска
+    double alpha = 0.1;  // Параметр сглаживания для EMA
+
+    // Создаём массив данных
+    std::vector<int> data(1000);
+    for (int& val : data) {
+        val = rand() % 100;  // Заполняем случайными числами от 0 до 99
+    }
+
+    // Нагрузка: повторяем поиск и расчет EMA
+    for (int i = 0; i < repetitions; i++) {
+        std::vector<int> results = searchInts(data, threshold);
+        double ema = calculateEMA(results, alpha);
+        std::cout << "EMA for repetition " << i + 1 << ": " << ema << std::endl;
+    }
+
+    return 0;
+}
+#include <iostream>
+#include <vector>
+#include <cstdlib>
+
+// Функция для поиска целых чисел в массиве
+std::vector<int> searchInts(const std::vector<int>& data, int threshold) {
+    std::vector<int> results;
+    for (int val : data) {
+        if (val > threshold) {
+            results.push_back(val);
+        }
+    }
+    return results;
+}
+
+// Функция для расчёта экспоненциального скользящего среднего
+double calculateEMA(const std::vector<int>& data, double alpha) {
+    if (data.empty()) return 0.0;
+    double ema = data[0];  // Начальное значение EMA
+    for (size_t i = 1; i < data.size(); i++) {
+        ema = alpha * data[i] + (1 - alpha) * ema;
+    }
+    return ema;
+}
+
+int main(int argc, char* argv[]) {
+    int repetitions = (argc > 1) ? atoi(argv[1]) : 10;
+    int threshold = 50;  // Пороговое значение для поиска
+    double alpha = 0.1;  // Параметр сглаживания для EMA
+
+    // Создаём массив данных
+    std::vector<int> data(1000);
+    for (int& val : data) {
+        val = rand() % 100;  // Заполняем случайными числами от 0 до 99
+    }
+
+    // Нагрузка: повторяем поиск и расчет EMA
+    for (int i = 0; i < repetitions; i++) {
+        std::vector<int> results = searchInts(data, threshold);
+        double ema = calculateEMA(results, alpha);
+        std::cout << "EMA for repetition " << i + 1 << ": " << ema << std::endl;
+    }
+
+    return 0;
+}
+#include <iostream>
+#include <vector>
+#include <cstdlib>
+
+// Функция для поиска целых чисел в массиве
+std::vector<int> searchInts(const std::vector<int>& data, int threshold) {
+    std::vector<int> results;
+    for (int val : data) {
+        if (val > threshold) {
+            results.push_back(val);
+        }
+    }
+    return results;
+}
+
+// Функция для расчёта экспоненциального скользящего среднего
+double calculateEMA(const std::vector<int>& data, double alpha) {
+    if (data.empty()) return 0.0;
+    double ema = data[0];  // Начальное значение EMA
+    for (size_t i = 1; i < data.size(); i++) {
+        ema = alpha * data[i] + (1 - alpha) * ema;
+    }
+    return ema;
+}
+
+int main(int argc, char* argv[]) {
+    int repetitions = (argc > 1) ? atoi(argv[1]) : 10;
+    int threshold = 50;  // Пороговое значение для поиска
+    double alpha = 0.1;  // Параметр сглаживания для EMA
+
+    // Создаём массив данных
+    std::vector<int> data(1000);
+    for (int& val : data) {
+        val = rand() % 100;  // Заполняем случайными числами от 0 до 99
+    }
+
+    // Нагрузка: повторяем поиск и расчет EMA
+    for (int i = 0; i < repetitions; i++) {
+        std::vector<int> results = searchInts(data, threshold);
+        double ema = calculateEMA(results, alpha);
+        std::cout << "EMA for repetition " << i + 1 << ": " << ema << std::endl;
+    }
+
+    return 0;
+}
+#include <iostream>
+#include <vector>
+#include <cstdlib>
+
+// Функция для поиска целых чисел в массиве
+std::vector<int> searchInts(const std::vector<int>& data, int threshold) {
+    std::vector<int> results;
+    for (int val : data) {
+        if (val > threshold) {
+            results.push_back(val);
+        }
+    }
+    return results;
+}
+
+// Функция для расчёта экспоненциального скользящего среднего
+double calculateEMA(const std::vector<int>& data, double alpha) {
+    if (data.empty()) return 0.0;
+    double ema = data[0];  // Начальное значение EMA
+    for (size_t i = 1; i < data.size(); i++) {
+        ema = alpha * data[i] + (1 - alpha) * ema;
+    }
+    return ema;
+}
+
+int main(int argc, char* argv[]) {
+    int repetitions = (argc > 1) ? atoi(argv[1]) : 10;
+    int threshold = 50;  // Пороговое значение для поиска
+    double alpha = 0.1;  // Параметр сглаживания для EMA
+
+    // Создаём массив данных
+    std::vector<int> data(1000);
+    for (int& val : data) {
+        val = rand() % 100;  // Заполняем случайными числами от 0 до 99
+    }
+
+    // Нагрузка: повторяем поиск и расчет EMA
+    for (int i = 0; i < repetitions; i++) {
+        std::vector<int> results = searchInts(data, threshold);
+        double ema = calculateEMA(results, alpha);
+        std::cout << "EMA for repetition " << i + 1 << ": " << ema << std::endl;
+    }
+
+    return 0;
+}
+#include <iostream>
+#include <vector>
+#include <cstdlib>
+
+// Функция для поиска целых чисел в массиве
+std::vector<int> searchInts(const std::vector<int>& data, int threshold) {
+    std::vector<int> results;
+    for (int val : data) {
+        if (val > threshold) {
+            results.push_back(val);
+        }
+    }
+    return results;
+}
+
+// Функция для расчёта экспоненциального скользящего среднего
+double calculateEMA(const std::vector<int>& data, double alpha) {
+    if (data.empty()) return 0.0;
+    double ema = data[0];  // Начальное значение EMA
+    for (size_t i = 1; i < data.size(); i++) {
+        ema = alpha * data[i] + (1 - alpha) * ema;
+    }
+    return ema;
+}
+
+int main(int argc, char* argv[]) {
+    int repetitions = (argc > 1) ? atoi(argv[1]) : 10;
+    int threshold = 50;  // Пороговое значение для поиска
+    double alpha = 0.1;  // Параметр сглаживания для EMA
+
+    // Создаём массив данных
+    std::vector<int> data(1000);
+    for (int& val : data) {
+        val = rand() % 100;  // Заполняем случайными числами от 0 до 99
+    }
+
+    // Нагрузка: повторяем поиск и расчет EMA
+    for (int i = 0; i < repetitions; i++) {
+        std::vector<int> results = searchInts(data, threshold);
+        double ema = calculateEMA(results, alpha);
+        std::cout << "EMA for repetition " << i + 1 << ": " << ema << std::endl;
+    }
+
+    return 0;
+}

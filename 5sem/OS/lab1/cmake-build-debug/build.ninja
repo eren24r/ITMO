@@ -49,8 +49,8 @@ cmake_ninja_workdir = C$:/Users/Aorus/Documents/GitHub/ITMO/5sem/OS/lab1/cmake-b
 
 build cmake_object_order_depends_target_lab1: phony || .
 
-build CMakeFiles/lab1.dir/lab1.cpp.obj: CXX_COMPILER__lab1_unscanned_Debug C$:/Users/Aorus/Documents/GitHub/ITMO/5sem/OS/lab1/lab1.cpp || cmake_object_order_depends_target_lab1
-  DEP_FILE = CMakeFiles\lab1.dir\lab1.cpp.obj.d
+build CMakeFiles/lab1.dir/shell.cpp.obj: CXX_COMPILER__lab1_unscanned_Debug C$:/Users/Aorus/Documents/GitHub/ITMO/5sem/OS/lab1/shell.cpp || cmake_object_order_depends_target_lab1
+  DEP_FILE = CMakeFiles\lab1.dir\shell.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\lab1.dir
   OBJECT_FILE_DIR = CMakeFiles\lab1.dir
@@ -63,7 +63,7 @@ build CMakeFiles/lab1.dir/lab1.cpp.obj: CXX_COMPILER__lab1_unscanned_Debug C$:/U
 #############################################
 # Link the executable lab1.exe
 
-build lab1.exe: CXX_EXECUTABLE_LINKER__lab1_Debug CMakeFiles/lab1.dir/lab1.cpp.obj
+build lab1.exe: CXX_EXECUTABLE_LINKER__lab1_Debug CMakeFiles/lab1.dir/shell.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\lab1.dir

@@ -1,0 +1,9 @@
+0.6
+2019.1
+May 24 2019
+15:06:07
+C:/Users/asus/Documents/vivado/lab3/project_1/project_1.sim/sim_1/behav/xsim/glbl.v,1558713910,verilog,,,,glbl,,,,,,,,
+C:/Users/asus/Documents/vivado/lab3/project_1/project_1.srcs/sim_1/new/func_tb.v,1711090134,verilog,,,,func_tb,,,,,,,,
+C:/Users/asus/Documents/vivado/lab3/project_1/project_1.srcs/sources_1/new/func.v,1711090072,verilog,,C:/Users/asus/Documents/vivado/lab3/project_1/project_1.srcs/sources_1/new/mul.v,,func,,,,,,,,
+C:/Users/asus/Documents/vivado/lab3/project_1/project_1.srcs/sources_1/new/mul.v,1711090039,verilog,,C:/Users/asus/Documents/vivado/lab3/project_1/project_1.srcs/sources_1/new/sqrt.v,,mul,,,,,,,,
+C:/Users/asus/Documents/vivado/lab3/project_1/project_1.srcs/sources_1/new/sqrt.v,1711090035,verilog,,C:/Users/asus/Documents/vivado/lab3/project_1/project_1.srcs/sim_1/new/func_tb.v,,sqrt,,,,,,,,

@@ -1,0 +1,113 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Fri Mar 22 09:51:14 2024
+# Process ID: 17240
+# Current directory: C:/Users/asus/Documents/vivado/lab3/project_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent16424 C:\Users\asus\Documents\vivado\lab3\project_1\project_1.xpr
+# Log file: C:/Users/asus/Documents/vivado/lab3/project_1/vivado.log
+# Journal file: C:/Users/asus/Documents/vivado/lab3/project_1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/asus/Documents/vivado/lab3/project_1/project_1.xpr
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 3
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+set_property IOSTANDARD LVCMOS33 [get_ports [list {a_bi[7]} {a_bi[6]} {a_bi[5]} {a_bi[4]} {a_bi[3]} {a_bi[2]} {a_bi[1]} {a_bi[0]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {b_bi[7]} {b_bi[6]} {b_bi[5]} {b_bi[4]} {b_bi[3]} {b_bi[2]} {b_bi[1]} {b_bi[0]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {y_bo[11]} {y_bo[10]} {y_bo[9]} {y_bo[8]} {y_bo[7]} {y_bo[6]} {y_bo[5]} {y_bo[4]} {y_bo[3]} {y_bo[2]} {y_bo[1]} {y_bo[0]}]]
+file mkdir C:/Users/asus/Documents/vivado/lab3/project_1/project_1.srcs/constrs_1/new
+close [ open C:/Users/asus/Documents/vivado/lab3/project_1/project_1.srcs/constrs_1/new/configuration.xdc w ]
+add_files -fileset constrs_1 C:/Users/asus/Documents/vivado/lab3/project_1/project_1.srcs/constrs_1/new/configuration.xdc
+set_property target_constrs_file C:/Users/asus/Documents/vivado/lab3/project_1/project_1.srcs/constrs_1/new/configuration.xdc [current_fileset -constrset]
+save_constraints -force
+place_ports {a_bi[7]} R13
+place_ports {a_bi[6]} U18
+place_ports {a_bi[5]} T18
+place_ports {a_bi[4]} R17
+place_ports {a_bi[3]} R15
+place_ports {a_bi[2]} M13
+place_ports {a_bi[1]} L16
+place_ports {a_bi[0]} J15
+place_ports {b_bi[7]} V10
+place_ports {b_bi[6]} U11
+place_ports {b_bi[5]} U12
+place_ports {b_bi[4]} H6
+place_ports {b_bi[3]} T13
+place_ports {b_bi[2]} R16
+place_ports {b_bi[1]} U8
+place_ports {b_bi[0]} T8
+save_constraints
+refresh_design
+set_property IOSTANDARD M [get_ports [list clk_i]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list busy_o]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list clk_i]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list rst_i]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list start_i]]
+save_constraints
+place_ports clk_i M17
+place_ports rst_i P17
+place_ports clk_i E3
+place_ports start_i M17
+place_ports busy_o H17
+save_constraints
+place_ports {y_bo[11]} T16
+set_property package_pin "" [get_ports [list  {y_bo[10]}]]
+place_ports busy_o V15
+place_ports {y_bo[0]} H17
+place_ports {y_bo[1]} K15
+place_ports {y_bo[2]} J13
+place_ports {y_bo[3]} N14
+place_ports {y_bo[4]} R18
+place_ports {y_bo[5]} V17
+place_ports {y_bo[6]} U17
+place_ports {y_bo[7]} U16
+set_property package_pin "" [get_ports [list  {y_bo[8]}]]
+place_ports {y_bo[8]} V16
+place_ports {y_bo[9]} T15
+place_ports {y_bo[10]} U14
+save_constraints
+close_design
+reset_run synth_1
+launch_runs synth_1 -jobs 3
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+launch_runs impl_1 -jobs 3
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 3
+wait_on_run impl_1
+close_design
+open_run impl_1
+close_design
+reset_run synth_1
+launch_runs impl_1 -jobs 3
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 3
+wait_on_run impl_1
+close_project
+open_project C:/Users/asus/Documents/vivado/lab3/project_1/project_1.xpr
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 3
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+launch_runs impl_1 -jobs 3
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 3
+wait_on_run impl_1
+close_design
+open_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/asus/Documents/vivado/lab3/project_1/project_1.runs/impl_1/func.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/asus/Documents/vivado/lab3/project_1/project_1.runs/impl_1/func.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]

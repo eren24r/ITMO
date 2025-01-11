@@ -1,0 +1,17 @@
+# ninja log v6
+18	39	7546572254039514	C:/Users/Aorus/Documents/GitHub/ITMO/3sem/pl/lab3new/cmake-build-debug/CMakeFiles/cmake.verify_globs	16f5cc0e3013a5c9
+148	300	7545094732232455	image-transform.exe	98b36428008e169b
+51	146	7545094731252374	CMakeFiles/image-transform.dir/src/transform.obj	a03573b3a0653378
+46	142	7545094731202657	CMakeFiles/image-transform.dir/src/image.obj	e4034367de8f4bda
+54	144	7545094731283118	CMakeFiles/image-transform.dir/src/util.obj	62d71fe87610c5bd
+48	145	7545094731232344	CMakeFiles/image-transform.dir/src/main.obj	596af20e12e638a6
+43	148	7545094731171436	CMakeFiles/image-transform.dir/src/bmp.obj	26062a19236f918
+39	475	7546572256580039	build.ninja	e589dc3cc92f6e4c
+32	71	7546572258762189	C:/Users/Aorus/Documents/GitHub/ITMO/3sem/pl/lab3new/cmake-build-debug/CMakeFiles/cmake.verify_globs	16f5cc0e3013a5c9
+81	180	7546572259255051	CMakeFiles/image-transform.dir/src/main.obj	596af20e12e638a6
+74	186	7546572259176932	CMakeFiles/image-transform.dir/src/bmp.obj	26062a19236f918
+78	195	7546572259217039	CMakeFiles/image-transform.dir/src/image.obj	e4034367de8f4bda
+195	633	7546572260396683	image-transform.exe	53d80f64b0f892da
+50	69	7546591054432163	C:/Users/Aorus/Documents/GitHub/ITMO/3sem/pl/lab3new/cmake-build-debug/CMakeFiles/cmake.verify_globs	16f5cc0e3013a5c9
+72	161	7546591054653221	CMakeFiles/image-transform.dir/src/main.obj	596af20e12e638a6
+161	483	7546591055545425	image-transform.exe	53d80f64b0f892da

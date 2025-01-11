@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Webtalk v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sat Nov 30 01:56:08 2024
+# Process ID: 20280
+# Current directory: C:/lab22/lab22/lab2/lab2.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source C:/lab22/lab22/lab2/lab2.sim/sim_1/behav/xsim/xsim.dir/testbench_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: C:/lab22/lab22/lab2/lab2.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: C:/lab22/lab22/lab2/lab2.sim/sim_1/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source C:/lab22/lab22/lab2/lab2.sim/sim_1/behav/xsim/xsim.dir/testbench_behav/webtalk/xsim_webtalk.tcl -notrace
+webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:13 . Memory (MB): peak = 94.375 ; gain = 0.000
+INFO: [Common 17-206] Exiting Webtalk at Sat Nov 30 01:56:21 2024...

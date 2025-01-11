@@ -1,0 +1,8 @@
+0.6
+2019.1
+May 24 2019
+15:06:07
+C:/Users/Aorus/Desktop/lab2/lab2.sim/sim_1/behav/xsim/glbl.v,1733212300,verilog,,,,glbl,,,,,,,,
+C:/Users/Aorus/Desktop/lab2/lab2.srcs/sim_1/new/testbench.v,1733245843,verilog,,,,testbench,,,,,,,,
+C:/Users/Aorus/Desktop/lab2/lab2.srcs/sources_1/new/math_accelerator.v,1733245024,verilog,,C:/Users/Aorus/Desktop/lab2/lab2.srcs/sources_1/new/mult.v,,math_accelerator,,,,,,,,
+C:/Users/Aorus/Desktop/lab2/lab2.srcs/sources_1/new/mult.v,1733214796,verilog,,C:/Users/Aorus/Desktop/lab2/lab2.srcs/sim_1/new/testbench.v,,mult,,,,,,,,

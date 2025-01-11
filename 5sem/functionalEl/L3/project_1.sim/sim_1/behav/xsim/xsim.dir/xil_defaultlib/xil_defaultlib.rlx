@@ -1,0 +1,9 @@
+0.6
+2019.1
+May 24 2019
+15:06:07
+C:/Users/Aorus/Desktop/L3/project_1.sim/sim_1/behav/xsim/glbl.v,1734343484,verilog,,,,glbl,,,,,,,,
+C:/Users/Aorus/Desktop/L3/project_1.srcs/sim_1/new/func_tb.v,1734343487,verilog,,,,func_tb,,,,,,,,
+C:/Users/Aorus/Desktop/L3/project_1.srcs/sources_1/new/func.v,1734343487,verilog,,C:/Users/Aorus/Desktop/L3/project_1.srcs/sources_1/new/mul.v,,func,,,,,,,,
+C:/Users/Aorus/Desktop/L3/project_1.srcs/sources_1/new/mul.v,1734343487,verilog,,C:/Users/Aorus/Desktop/L3/project_1.srcs/sources_1/new/sqrt.v,,mul,,,,,,,,
+C:/Users/Aorus/Desktop/L3/project_1.srcs/sources_1/new/sqrt.v,1734343487,verilog,,C:/Users/Aorus/Desktop/L3/project_1.srcs/sim_1/new/func_tb.v,,sqrt,,,,,,,,

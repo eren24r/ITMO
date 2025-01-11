@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="testbench_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="testbench" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="139600001fs"></ZoomEndTime>
+      <Cursor1Time time="45000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="129"></NameColumnWidth>
+      <ValueColumnWidth column_width="204"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="28" />
+   <wvobject fp_name="/testbench/clk_i" type="logic">
+      <obj_property name="ElementShortName">clk_i</obj_property>
+      <obj_property name="ObjectShortName">clk_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/rst_i" type="logic">
+      <obj_property name="ElementShortName">rst_i</obj_property>
+      <obj_property name="ObjectShortName">rst_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/start_i" type="logic">
+      <obj_property name="ElementShortName">start_i</obj_property>
+      <obj_property name="ObjectShortName">start_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/a" type="array">
+      <obj_property name="ElementShortName">a[7:0]</obj_property>
+      <obj_property name="ObjectShortName">a[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/b" type="array">
+      <obj_property name="ElementShortName">b[7:0]</obj_property>
+      <obj_property name="ObjectShortName">b[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/busy_o" type="logic">
+      <obj_property name="ElementShortName">busy_o</obj_property>
+      <obj_property name="ObjectShortName">busy_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/y" type="array">
+      <obj_property name="ElementShortName">y[15:0]</obj_property>
+      <obj_property name="ObjectShortName">y[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/clk_i" type="logic">
+      <obj_property name="ElementShortName">clk_i</obj_property>
+      <obj_property name="ObjectShortName">clk_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/rst_i" type="logic">
+      <obj_property name="ElementShortName">rst_i</obj_property>
+      <obj_property name="ObjectShortName">rst_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/start_i" type="logic">
+      <obj_property name="ElementShortName">start_i</obj_property>
+      <obj_property name="ObjectShortName">start_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/a" type="array">
+      <obj_property name="ElementShortName">a[7:0]</obj_property>
+      <obj_property name="ObjectShortName">a[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/b" type="array">
+      <obj_property name="ElementShortName">b[7:0]</obj_property>
+      <obj_property name="ObjectShortName">b[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/busy_o" type="logic">
+      <obj_property name="ElementShortName">busy_o</obj_property>
+      <obj_property name="ObjectShortName">busy_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/y" type="array">
+      <obj_property name="ElementShortName">y[15:0]</obj_property>
+      <obj_property name="ObjectShortName">y[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/sqrt_result" type="array">
+      <obj_property name="ElementShortName">sqrt_result[7:0]</obj_property>
+      <obj_property name="ObjectShortName">sqrt_result[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/x" type="array">
+      <obj_property name="ElementShortName">x[7:0]</obj_property>
+      <obj_property name="ObjectShortName">x[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/x_next" type="array">
+      <obj_property name="ElementShortName">x_next[7:0]</obj_property>
+      <obj_property name="ObjectShortName">x_next[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/temp1" type="array">
+      <obj_property name="ElementShortName">temp1[15:0]</obj_property>
+      <obj_property name="ObjectShortName">temp1[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/temp2" type="array">
+      <obj_property name="ElementShortName">temp2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">temp2[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/i" type="array">
+      <obj_property name="ElementShortName">i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/mult_busy" type="logic">
+      <obj_property name="ElementShortName">mult_busy</obj_property>
+      <obj_property name="ObjectShortName">mult_busy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/mult_start" type="logic">
+      <obj_property name="ElementShortName">mult_start</obj_property>
+      <obj_property name="ObjectShortName">mult_start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/mult_result" type="array">
+      <obj_property name="ElementShortName">mult_result[15:0]</obj_property>
+      <obj_property name="ObjectShortName">mult_result[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/state" type="array">
+      <obj_property name="ElementShortName">state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">state[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/IDLE" type="array">
+      <obj_property name="ElementShortName">IDLE[1:0]</obj_property>
+      <obj_property name="ObjectShortName">IDLE[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/CALC_SQRT" type="array">
+      <obj_property name="ElementShortName">CALC_SQRT[1:0]</obj_property>
+      <obj_property name="ObjectShortName">CALC_SQRT[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/CALC_MULT" type="array">
+      <obj_property name="ElementShortName">CALC_MULT[1:0]</obj_property>
+      <obj_property name="ObjectShortName">CALC_MULT[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/DONE" type="array">
+      <obj_property name="ElementShortName">DONE[1:0]</obj_property>
+      <obj_property name="ObjectShortName">DONE[1:0]</obj_property>
+   </wvobject>
+</wave_config>

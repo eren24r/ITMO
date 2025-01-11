@@ -1,0 +1,24 @@
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+Time: 75000 | a =   2, b =   4, y =     0
+Time: 175000 | a =   3, b =   9, y =     4
+Time: 275000 | a =   4, b =  16, y =     9
+Time: 375000 | a =   5, b =  25, y =    16
+Time: 475000 | a =   6, b =  36, y =    25
+Time: 575000 | a =   7, b =  49, y =    36
+Time: 675000 | a =   8, b =  64, y =    49
+Time: 775000 | a =  10, b = 100, y =    64
+Time: 875000 | a =  12, b = 144, y =   100
+Time: 975000 | a =  15, b = 225, y =   144
+$finish called at time : 975 ns : File "C:/Users/Aorus/Desktop/lab2/lab2.srcs/sim_1/new/testbench.v" Line 54
+Time: 75000 | a =   2, b =   4, y =     0
+Time: 175000 | a =   3, b =   9, y =     4
+Time: 275000 | a =   4, b =  16, y =     9
+Time: 375000 | a =   5, b =  25, y =    16
+Time: 475000 | a =   6, b =  36, y =    25
+Time: 575000 | a =   7, b =  49, y =    36
+Time: 675000 | a =   8, b =  64, y =    49
+Time: 775000 | a =  10, b = 100, y =    64
+Time: 875000 | a =  12, b = 144, y =   100
+Time: 975000 | a =  15, b = 225, y =   144
+$finish called at time : 975 ns : File "C:/Users/Aorus/Desktop/lab2/lab2.srcs/sim_1/new/testbench.v" Line 54

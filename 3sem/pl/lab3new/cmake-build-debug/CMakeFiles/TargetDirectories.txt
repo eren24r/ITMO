@@ -1,0 +1,3 @@
+C:/Users/Aorus/Documents/GitHub/ITMO/3sem/pl/lab3new/cmake-build-debug/CMakeFiles/image-transform.dir
+C:/Users/Aorus/Documents/GitHub/ITMO/3sem/pl/lab3new/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Aorus/Documents/GitHub/ITMO/3sem/pl/lab3new/cmake-build-debug/CMakeFiles/rebuild_cache.dir

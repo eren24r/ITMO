@@ -1,0 +1,14 @@
+# ninja log v6
+5	1595	7595002835896007	CMakeFiles/lab2.dir/lab2_cache.cpp.obj	443e934111d96636
+16	264	7595113138486583	build.ninja	eaa8580ff73dd88a
+10	353	7595051935235145	CMakeFiles/lab2.dir/main.cpp.obj	136fd807b58defa3
+28	1475	7595004946472292	CMakeFiles/lab2_cache.dir/lab2_cache.cpp.obj	33a71045ae93ea7c
+1475	1611	7595004962220654	liblab2_cache.dll.a	15e563c4633305aa
+1475	1611	7595004962220654	liblab2_cache.dll	15e563c4633305aa
+1266	1347	7595054261322776	lab2.exe	291315444fa4f919
+5	1266	7595054248707940	CMakeFiles/lab2.dir/lab2_cache_exe.cpp.obj	b97a027128f75896
+5	1273	7595056359520988	CMakeFiles/lab2_cache_exe.dir/lab2_cache_exe.cpp.obj	8fc510686d4dc6e3
+1274	1348	7595056372213762	lab2_cache_exe.exe	fb3e59c5c3023d9f
+28	1255	7595112783044861	CMakeFiles/lab2_cache_exe.dir/compare.cpp.obj	beba8cf85c6e17d8
+17	1482	7595113158883086	CMakeFiles/lab2_cache_exe.dir/lab2_cache_exe.cpp.obj	8fc510686d4dc6e3
+1482	1557	7595113173531363	lab2_cache_exe.exe	fb3e59c5c3023d9f

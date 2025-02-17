@@ -1,0 +1,3 @@
+C:/Users/Aorus/Documents/GitHub/ITMO/5sem/OS/lab2/cmake-build-debug/CMakeFiles/lab2_cache_exe.dir
+C:/Users/Aorus/Documents/GitHub/ITMO/5sem/OS/lab2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Aorus/Documents/GitHub/ITMO/5sem/OS/lab2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

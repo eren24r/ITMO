@@ -9,15 +9,24 @@ public class HashTable {
         this.table = new String[size];
     }
 
-    public void insert(String key) {
+    public boolean insert(String key) {
+        if(key == null || key.isEmpty()) {
+            throw new IllegalArgumentException("Key cannot be null or empty");
+        }
+
         int index = hash(key);
         while (table[index] != null) {
             index = (index + 1) % size;
         }
         table[index] = key;
+
+        return true;
     }
 
     public boolean search(String key) {
+        if(key == null || key.isEmpty())
+            throw new IllegalArgumentException("Key cannot be null or empty");
+
         int index = hash(key);
         while (table[index] != null) {
             if (table[index].equals(key)) return true;
@@ -26,15 +35,20 @@ public class HashTable {
         return false;
     }
 
-    public void delete(String key) {
+    public boolean delete(String key) {
+        if(key == null || key.isEmpty())
+            throw new IllegalArgumentException("Key cannot be null or empty");
+
         int index = hash(key);
         while (table[index] != null) {
             if (table[index].equals(key)) {
                 table[index] = null;
-                return;
+                return false;
             }
             index = (index + 1) % size;
         }
+
+        return true;
     }
 
     public int hash(String key) {

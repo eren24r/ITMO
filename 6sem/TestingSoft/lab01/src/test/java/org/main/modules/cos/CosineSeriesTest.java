@@ -6,6 +6,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CosineSeriesTest {
     @Test
+    void testFact(){
+        assertEquals(1, CosineSeries.factorial(1));
+        assertEquals(2, CosineSeries.factorial(2));
+        assertEquals(6, CosineSeries.factorial(3));
+        assertEquals(24, CosineSeries.factorial(4));
+    }
+
+    @Test
     void testCosineApproximation() {
         assertEquals(Math.cos(0), CosineSeries.cos(0, 10), 1e-6);
         assertEquals(Math.cos(Math.PI / 4), CosineSeries.cos(Math.PI / 4, 15), 1e-6);

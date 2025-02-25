@@ -1,43 +1,52 @@
 package org.main.modules.object;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class DomainTest {
+    public Author smplAuth = null;
+
+
+    @BeforeEach
+    public void setUp() {
+        this.smplAuth = new Author("Оолон Коллупхид", "@mail", "+75656");
+    }
+
+    @Test
+    void AuthorTest(){
+        assertEquals("Оолон Коллупхид", smplAuth.getName());
+        assertEquals("@mail", smplAuth.getEmail());
+        assertEquals("+75656", smplAuth.getNumber());
+    }
+
     @Test
     void testBookCreation() {
-        Book book = new Book("Ну вот, пожалуй, и все о Боге", "Оолон Коллупхид", 2020);
+        Book book = new Book("Ну вот, пожалуй, и все о Боге",  2020, smplAuth);
         assertEquals("Ну вот, пожалуй, и все о Боге", book.title);
-        assertEquals("Оолон Коллупхид", book.author);
         assertEquals(2020, book.year);
         assertEquals("Ну вот, пожалуй, и все о Боге by Оолон Коллупхид, published in 2020", book.getSummary());
     }
 
     @Test
+    void testBookCreationNullYear() {
+        Book book = new Book("Ну вот, пожалуй, и все о Боге",  -1, smplAuth);
+        assertThrows(IllegalArgumentException.class, book::isVariableYear);
+    }
+
+    @Test
     void testClassicBook() {
-        Book classicBook = new Book("Old Book", "Some Author", 1980);
+        Book classicBook = new Book("Old Book", 1980, smplAuth);
         assertTrue(classicBook.isClassic());
     }
 
     @Test
     void testNonClassicBook() {
-        Book modernBook = new Book("Modern Book", "Another Author", 2021);
+        Book modernBook = new Book("Modern Book", 2021, smplAuth);
         assertFalse(modernBook.isClassic());
     }
 
-    @Test
-    void testTheologian() {
-        Theologian theologian = new Theologian("John Doe", "Believes in free will", 55);
-        assertEquals("John Doe", theologian.name);
-        assertEquals("Believes in free will", theologian.opinion);
-        assertEquals(55, theologian.age);
-        assertTrue(theologian.isSenior());
-    }
 
-    @Test
-    void testYoungTheologian() {
-        Theologian youngTheologian = new Theologian("Jane Doe", "Believes in destiny", 30);
-        assertFalse(youngTheologian.isSenior());
-    }
+
 }
